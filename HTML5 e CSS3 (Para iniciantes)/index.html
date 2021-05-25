@@ -1,60 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 558. Semântica na estrutura do HTML5</title>
     <style>
-        .img-in-text {
-            width: 50px;
-            height: 44px;
-        }
-        .span-color{
-            color: red;
-            font-size: 28px;
-        }
-        .div-color{
-            color: blueviolet;
+        li{
+            padding: 0;
+
         }
     </style>
 </head>
 <body>
-    <h1 style="background: red;">Cabeçalho</h1>
-    <h1 style="background: red;">Cabeçalho</h1>
-    <h1 style="background: red;">Cabeçalho</h1>
-    <h1 style="background: red;">Cabeçalho</h1>
-    <p><b>Lorem ipsum</b>  sit amet <strong>consectetur</strong>
-        adipisicing elit. <i>itálico</i> Consectetur 
-        <em>enfase com texto em itálico</em> reprehenderit eveniet provident 
-        <img class="img-in-text" src="https://seeklogo.com/images/M/mdn-logo-6DB9B0093F-seeklogo.com.png" alt="Logo da MDN" >
-
-        mollitia, atque deserunt <del>Errata< com a tag del </del> eaque <ins> tirei a Errata e informei que o que está correto </ins>pariatur fugiat doloribus delectus 
-        <s>Tag s para colocar um risco</s>
-        possimus odit <u> tag u para underscore um traço abaixo</u></u8>voluptatum, <a href="http://www.google.com" target="_blank">GOOGLE</a> debitis dolorum officiis sunt deleniti, 
-        id asperiores?</p>
-        <p>Lorem <small> tag small para reduzir o tamanho do texto</small> dolor sit amet 
-            consectetur <br> Tab br para quebrar a linha br <br >badipisicing elit. 
-            <sup>elevar um número ou texto</sup> 3<sup>2</sup> = 9, 
-            Praesentium quasi<sub>voluptate culpa</sub>, fórmula da água é: h<sub>2</sub>O 
-            perspiciatis libero exercitationem vel autem iusto neque provident est rerum, 
-            <span class="span-color"> tag in line dentro do parágrafo com span, dolorum </span>reprehenderit molestias 
-            sit saepe esse pariatur!</p>
-        <hr>
-        <p> quero fazer uma citação dentro de um parágrafo <q> aqui está uma citação em linha</q>, mas agora vou fazer uma <blockquote cite="https://www.w3schools.com/tags/tag_cite.asp">Uma citação em bloco </blockquote>
-        
-        A  tag <code> aqui deveria ser um código <cite> porque não é?, console.log é  </code> também suporta os<cite> atributos de evento em HTML .</cite></p>
-        <pre> a forma correta de citar um código é:<br>
-        <code>
-            colocar ele
-            aqui dentro
-            linha por linha
-            mas não dentro de um parágrafo,
-            mas sim, dentro de uma tag
-          
-
-        </code></pre>
-        <div class="div-color"> eu sou um bloco</div>
-       
+<header>
+    <h1>Título da Página Principal</h1>
+    <img src="https://seeklogo.com/images/M/mdn-logo-6DB9B0093F-seeklogo.com.png" alt="MDN logo">
+    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non incidunt magni aliquam sint dicta delectus molestiae earum rerum, quisquam id minima quo illo cupiditate aut impedit nisi consequuntur libero laborum?</P>
+  </header>
+  <aside>
+      <nav>
+          <ul>
+              <li>
+                  <a href=""> Menu 1</a>
+              </li>
+              <li>
+                <a href=""> Menu 2</a>
+            </li>
+            <li>
+                <a href=""> Menu 3</a>
+            </li>
+          </ul>
+      </nav>
+  </aside>
+  <section>
+      <header>
+          <h2> conteúdo da seção Feminina, titulo do cabeçalho</h2>
+      </header>
+      <article>
+          <h2>titulo do artigo</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+      </article>
+      <article>
+        <h2>artigo pode ser utilizado para mostrar produtos 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+    </article>
+    <article>
+        <h2>artigo pode ser utilizado para mostrar produtos 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+    </article>
+    <footer>
+        <p>Rodape da seção 1 para o artigo 1</p>
+    </footer>
+  </section>
+  <section>
+    <header>
+        <h2> conteúdo da seção Masculina, titulo do cabeçalho</h2>
+    </header>
+    <article>
+        <h2>titulo do artigo</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+    </article>
+    <article>
+      <h2>artigo pode ser utilizado para mostrar produtos 1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+  </article>
+  <article>
+      <h2>artigo pode ser utilizado para mostrar produtos 2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ipsa quae! Soluta, magni nihil eius saepe velit reprehenderit optio magnam animi deserunt excepturi. Dolores explicabo asperiores pariatur doloribus saepe accusantium!</p>
+  </article>
+  <footer>
+      <p>Rodape da seção 2 para o artigo 2</p>
+  </footer>
+</section>
+<footer>
+    Meu endereço, meu telefone, informações sobre que quero que esteja no rodapé da página
+</footer>
 </body>
+
 </html>
