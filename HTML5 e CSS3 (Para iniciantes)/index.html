@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>559. Pensando em HTML e CSS</title>
+    <title>560. Introdução ao CSS Box-Model</title>
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        body {
-            background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/8dc3f88b-a96a-4d8a-af9a-a69e6f3b2506/5c809235-fe67-4a98-af86-95a0a5a51e74/BR-pt-20210524-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+        .section-one{
+            width: 300px;
+            height: 150px;
+            background-color: deeppink;
+            background-image: url(https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/lightscape-LRQsyNQL1TE-unsplash.jpg?crop=0,555,4945,2163&wid=640&hei=280&scl=7.7265625);
             background-size: cover;
-            background-position: top center;
-
+            background-position: center center;
+            color: aliceblue;
+            border-width: 15px;
+            border-style: solid;
+            border-bottom-color: firebrick;
+            border-top-color: yellow;
+            border-left-color: green ;
+            border-right-color: blue;
+            padding:  15px;
+            margin: 20px;
+            
         }
-        #heading{
-            background: rgba(0, 0, 0, 0.5);
+        .section-two{
+            background: cyan;
+            width: 200px;
+            height: 50px;
+            border: 5px solid black;
+            padding: 15px;
+            margin: 20px;
         }
-        #heading div{
-            width: 80%;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-        }
-        #heading .h1 {
-            padding: 15px 0;
-            font-size: 20px;
-            text-transform: uppercase;
-        }
-        #heading a {
-            color: #fff;
-            text-decoration: none;
-            font-family: sans-serif;
-        }        
     </style>
 </head>
 <body>
-    <header id="heading">
-        <div>
-        <h1 class="h1">
-            <a href="#">Netflix</a>
-        </h1>
-        <h2 class="h1 na-direita">
-            <a href="#">Netflix</a>
-        </h2>
-    </div>    
-    </header>
+    <section class="section-one">Lorem ipsum dolor sit amet consectetur adipisicing elit. </section>
+    <section class="section-two">2</section>
+    
 </body>
 </html>
