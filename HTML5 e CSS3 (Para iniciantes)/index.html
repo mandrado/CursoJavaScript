@@ -10,11 +10,23 @@
             margin: 0;
             padding: 0;
         }
-        #heading{
-            background: #e50941 ;
+        body {
+            background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/8dc3f88b-a96a-4d8a-af9a-a69e6f3b2506/5c809235-fe67-4a98-af86-95a0a5a51e74/BR-pt-20210524-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+            background-size: cover;
+            background-position: top center;
+
         }
-        #heading h1 {
-            margin-top: 20px;
+        #heading{
+            background: rgba(0, 0, 0, 0.5);
+        }
+        #heading div{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        #heading .h1 {
+            padding: 15px 0;
             font-size: 20px;
             text-transform: uppercase;
         }
@@ -27,9 +39,14 @@
 </head>
 <body>
     <header id="heading">
-    <h1>
-        <a href="#">Netflix</a>
-    </h1>
-</header>
+        <div>
+        <h1 class="h1">
+            <a href="#">Netflix</a>
+        </h1>
+        <h2 class="h1 na-direita">
+            <a href="#">Netflix</a>
+        </h2>
+    </div>    
+    </header>
 </body>
 </html>
