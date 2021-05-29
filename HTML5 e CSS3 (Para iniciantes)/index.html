@@ -4,44 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>560. Introdução ao CSS Box-Model</title>
+    <title>561. Listas e Menus com HTML e CSS</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        .section-one{
-            width: 300px;
-            height: 150px;
-            background-color: deeppink;
-            background-image: url(https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/lightscape-LRQsyNQL1TE-unsplash.jpg?crop=0,555,4945,2163&wid=640&hei=280&scl=7.7265625);
-            background-size: cover;
-            background-position: center center;
-            color: aliceblue;
-            border-width: 15px;
-            border-style: solid;
-            border-bottom-color: firebrick;
-            border-top-color: yellow;
-            border-left-color: green ;
-            border-right-color: blue;
-            padding:  15px;
-            margin: 20px;
-            
+        nav {
+            display: flex;
+            align-items: center;
+            background:red;
         }
-        .section-two{
-            background: cyan;
-            width: 200px;
-            height: 50px;
-            border: 5px solid black;
-            padding: 15px;
-            margin: 20px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: red;
+            padding: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+        nav a:hover{
+            background: rgba(0, 0, 0, 0.3);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
         }
     </style>
+
 </head>
 <body>
-    <section class="section-one">Lorem ipsum dolor sit amet consectetur adipisicing elit. </section>
-    <section class="section-two">2</section>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+
+    </nav>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ol type="1" start="2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <dl>
+        <dt>Café</dt>
+        <dd>Bebida escura </dd>
+        <dt>Leite</dt>
+        <dd>Bebida branca de mamifero </dd>
+    </dl>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio eos excepturi fuga! Itaque corporis perferendis atque? Laborum voluptas quasi reiciendis at ipsa architecto aliquid veritatis qui error? Provident, expedita ratione?</p>
     
 </body>
 </html>
