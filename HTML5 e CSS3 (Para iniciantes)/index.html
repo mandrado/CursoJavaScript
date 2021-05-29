@@ -4,76 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>562. Tabelas HTML</title>
+    <title>563. Formulários e Inputs HTML - Parte 1, 2 e 3</title>
     <style>
-        body {
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        body{
+            font-family: sans-serif;
         }
-        table{
-            border-collapse: collapse;
-            width: 800%;
-        }
-        table td, table th {
-            border: 1px solid #ccc;
-            padding: 5px;
-            text-align: left;
-        }
-        table caption {
-            caption-side: bottom;
-            text-align: left;
-            font-style: italic;
-            font-size: 14px;
-            margin: 5px 0;
-
-        }
-        table tfoot tr{
-            background: #ddd;
-        }
-        table thead {
-            background: #ddd;
-        }
-        .responsive-table {
-            max-width: 100%;
-            overflow-x: auto;
+        label{
+            cursor: pointer;
         }
     </style>
+
    </head>
 <body>
-    <p> Lorem ipsum dolor sit.</p>
-    <div class="responsive-table"> 
-    <table>
-        <caption>Uma descrição para a tabela</caption>
-        <thead>
-            <tr>
-                <th>Título 1</th>
-                <th>Título 2</th>
-                <th>Título 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> Corpo 1</td>
-                <td> Corpo 2</td>
-                <td> Corpo 3</td>
-            </tr>
-            <tr>
-                <td> Corpo 1</td>
-                <td> Corpo 2</td>
-                <td> Corpo 3</td>
-            </tr>
-            <tr>
-                <td colspan="2" rowspan="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptatibus tempora, temporibus delectus saepe aut eaque ea totam alias modi, consectetur optio voluptate dolorem excepturi at sunt impedit non ipsum!</td>
-                <td> Corpo 3</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2"> Total</td>
-                <td> R$ 555,00</td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
+    <form action="#" method="GET" target="_blank" autocomplete="off"> 
+        <p> O meu formulário</p>
+        <p>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+        </p>
+        <p>
+            <label for="email">E-mail: </label>
+            <input type="email" id="email" name="email" placeholder="ex.: email@email.com" required>
+        </p>
+        <p>
+            <label for="foto">Inclua sua foto </label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+        </p>
+        <p>
+            <label for="numero">Informe somente números: </label>
+            <input type="number" id="numero" name="numero" required min="10" max="50" step="5">
+        </p>
+        <p>
+            <label for="file">Inclua varios arquivos </label>
+            <input type="file" id="file" name="file" accept="" multiple>
+        </p>
+        <p>
+            <label for="devhtml">Sou um dev html: </label>
+            <input type="checkbox" id="devhtml" name="devhtml" value="sim" checked> <br>
+            <label for="devCSS">Sou um dev CSS: </label>
+            <input type="checkbox" id="devCSS" name="devCSS" value="sim" checked><br>
+            <label for="devjs">Sou um dev JS: </label>
+            <input type="checkbox" id="devjs" name="devjs" value="sim" checked><br>
+        </p>
+        <p>
+            Gênero:<Br>
+                <label for="genfem">Feminino: </label>
+                <input type="radio" id="genfem" name="genero" value="Feminino" > <br>
+                <label for="genmasc">Masculino: </label>
+                <input type="radio" id="genmasc" name="genero" value="Masculino" ><br>
+                <label for="genOutro">Outro: </label>
+                <input type="radio" id="genOutro" name="genero" value="Outro" ><br>
+            </p>
+            <p>
+                <label for="data">Data: </label>
+                <input type="date" id="data" name="data" value="2021-05-29">
+            </p>
+            <p>
+                <label for="datatime">Data: </label>
+                <input type="datetime-local" id="datetime" name="datetime" value="2021-05-29T18:00">
+            </p>
+            <p>
+                <label for="time">Hora: </label>
+                <input type="time" id="time" name="time" value="18:00">
+            </p>
+            <p>
+                <label for="cor">Cor preferida: </label>
+                <input type="color" id="cor" name="cor" value="#002699">
+            </p>
+            
+            <p>
+                <button type="reset">Reset</button>
+                <button type="submit">Enviar</button>
+        </p>
+
+    </form>
     
 </body>
 </html>
