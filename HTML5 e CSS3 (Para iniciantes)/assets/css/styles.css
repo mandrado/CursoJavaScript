@@ -8,7 +8,16 @@
 .pai h1~p {
     color: yellow;
 }
-[meu-atributo="valor"] {
+[meu-atributo~="valor"] {
+    color: blue;
+}
+[meu-atributo^="valor"] {
+    color: blue;
+}
+[meu-atributo|="valor"] {
+    color: blue;
+}
+[meu-atributo*="valor"] {
     color: blue;
 }
 [checked]{
