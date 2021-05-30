@@ -1,5 +1,30 @@
-.caixa{
-    background: red;
-    height: 120px;
-    width: 120px;
+* {
+    margin: 0;
+    padding: 0;
+}
+/* h1, p {
+    color: blue
+}
+body div section h1, 
+body div section p 
+{
+    color: red;
+} */
+.color-red{
+    color: red;
+}
+
+.main-content h2.heading {
+    font-style: italic;
+    color: blueviolet;
+}
+div {
+    color: initial;
+    margin-left: 20px;
+}
+.pai > .filha {
+    color: red;
+}
+.pai > .filha > .filha {
+    color: pink;
 }
