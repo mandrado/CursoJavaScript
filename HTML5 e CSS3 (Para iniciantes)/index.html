@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>563. Formulários e Inputs HTML - Parte 1, 2 e 3</title>
+    <title>566. Formulários e Inputs HTML - Parte 4</title>
     <style>
         body{
             font-family: sans-serif;
@@ -25,6 +25,32 @@
         <p>
             <label for="email">E-mail: </label>
             <input type="email" id="email" name="email" placeholder="ex.: email@email.com" required>
+        </p>
+        <p>
+            <label for="password">Senha: <abbr title="requerido">*</abbr></label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </p>
+        <p>
+            <label for="range">Range: </label>
+            <input type="range" id="range" name="range"  min="0" max="10" step="2">
+        </p>
+        <p>
+            <label for="range2">Range: </label>
+            <input type="range" id="range2" name="range2" list="tickmarks">
+            <datalist id="tickmarks">
+                <option value="0" label="0%"></option>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50" label="50%"></option>
+                <option value="60"></option>
+                <option value="70">70</option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100" label="100%"></option>
+
+            </datalist>
         </p>
         <p>
             <label for="foto">Inclua sua foto </label>
@@ -71,7 +97,35 @@
                 <label for="cor">Cor preferida: </label>
                 <input type="color" id="cor" name="cor" value="#002699">
             </p>
-            
+            <p>
+                <label for="url">Sua url: </label>
+                <input type="url" id="url" name="url" placeholder="http://www.minhaurl.com">
+            </p>
+            <p>
+                <label for="search">Faça sua busca </label>
+                <input type="search" id="search" name="search" placeholder="Faça sua busca">
+            </p>
+            <p>
+                <label for="textarea">Area de texto</label>
+                <textarea name="textarea" id="textarea" rows="8"></textarea>
+            </p>
+            <p>
+                <label for="select"> Selecione alguma opção:</label>
+                <select id="select" name="select" multiple>
+                    <optgroup label="Grupo 1">
+                        <option value="opcao 1" label="Label 1"></option>
+                        <option value="opcao 2" label="Label 2"></option>
+                        <option value="opcao 3" label="Label 3" selected></option>
+                        <option value="opcao 4" label="Label 4" disabled></option>
+                    </optgroup>
+                    <optgroup label="Grupo 2">
+                        <option value="opcao 1" label="Label 1"></option>
+                        <option value="opcao 2" label="Label 2"></option>
+                        <option value="opcao 3" label="Label 3" selected></option>
+                        <option value="opcao 4" label="Label 4" disabled></option>
+                    </optgroup>
+                </select>
+            </p>
             <p>
                 <button type="reset">Reset</button>
                 <button type="submit">Enviar</button>
