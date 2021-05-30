@@ -2,29 +2,16 @@
     margin: 0;
     padding: 0;
 }
-/* h1, p {
-    color: blue
-}
-body div section h1, 
-body div section p 
-{
-    color: red;
-} */
-.color-red{
+.pai h1+p {
     color: red;
 }
-
-.main-content h2.heading {
-    font-style: italic;
-    color: blueviolet;
+.pai h1~p {
+    color: yellow;
 }
-div {
-    color: initial;
-    margin-left: 20px;
+[meu-atributo="valor"] {
+    color: blue;
 }
-.pai > .filha {
-    color: red;
-}
-.pai > .filha > .filha {
-    color: pink;
+[checked]{
+    width: 50px;
+    height: 50px;
 }
