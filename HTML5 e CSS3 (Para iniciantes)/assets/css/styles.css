@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.heading{
+/* .heading{
     transition: all 300ms ease-in-out;
 }
 .heading:hover{
@@ -30,7 +30,7 @@ input:focus{
 input:disabled{
     background-color: blueviolet;
     cursor: not-allowed;
-}
+} */
 input:checked + p{
 /*     width: 50px;
     height: 50px; */
@@ -47,7 +47,7 @@ input:not(:checked) + p{
 /* p{
     color: red;
 } */
-p:not(.meio){
+/* p:not(.meio){
     color: blue;
 }
 ul li:nth-child(odd){
@@ -104,4 +104,24 @@ ul li::before{
 }
 ::placeholder{
     color: red
+} */
+/* 
+priridades de especificidade
+ID, Classes|atributos e pseudo-classes, elementos e pseudo-elementos
+ 1, 0                                 , 0 
+ 0, 1                                 , 0 
+
+ 1. especificidade
+ 2. empate
+ 3. sytle
+ 4. !important
+ */
+#p {
+    background: yellow;
+}
+.p {
+    background: red !important;
+}
+#p.p {
+    background: green;
 }
