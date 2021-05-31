@@ -50,3 +50,28 @@ input:not(:checked) + p{
 p:not(.meio){
     color: blue;
 }
+ul li:nth-child(odd){
+    background-color: green;
+}
+ul li:nth-child(even){
+    background-color: yellow;
+}
+ul li:nth-child(3n){
+  background-color: aqua;  
+}
+ul li:nth-child(3n+5){
+  background-color: pink;  
+}
+}
+p:nth-child(odd){
+    background-color: green;
+}
+p:nth-child(even){
+    background-color: yellow;
+}
+p:nth-child(3n){
+  background-color: aqua;  
+}
+p:nth-child(3n+5){
+  background-color: pink;  
+}
