@@ -62,7 +62,6 @@ ul li:nth-child(3n){
 ul li:nth-child(3n+5){
   background-color: pink;  
 }
-}
 p:nth-child(odd){
     background-color: green;
 }
@@ -74,4 +73,35 @@ p:nth-child(3n){
 }
 p:nth-child(3n+5){
   background-color: pink;  
+}
+p::first-letter{
+    font-size: 30px;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+p{
+    font-size: 20xp;
+}
+p::first-line{
+    background: greenyellow;
+}
+p::selection{
+    background: black;
+    color: white;
+}
+ul li::after{
+    content: ' - ';
+    background: red;
+    color: white;
+    display: inline-table;
+}
+ul li::before{
+    content: ' - ';
+    background: blue;
+    color: white;
+    display: inline-table;
+}
+::placeholder{
+    color: red
 }
