@@ -35,8 +35,18 @@ input:checked + p{
 /*     width: 50px;
     height: 50px; */
     background-color: blue;
+    color: azure;
+}
+input:not(:checked) + p{
+    background: yellow;
 }
 
 .pai-lista .lista li:first-child{
     background: red;
+}
+/* p{
+    color: red;
+} */
+p:not(.meio){
+    color: blue;
 }
