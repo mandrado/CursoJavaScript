@@ -15,7 +15,7 @@
 }
 
 .grid .col {
-    width: 33.33%;
+/*     width: 33.33%; */
     height: 300px;
     float: left;
     padding: 15px;
@@ -29,4 +29,33 @@
 }
 p{
     clear: both;
+}
+
+@media all and (max-width: 411px) {
+    .grid .col {
+        width: 100%;
+   
+    }
+    
+}
+@media all and (min-width: 412px) and (max-width: 768px) {
+    .grid .col {
+        width: 50%;
+   
+    }
+    
+}
+@media all and (min-width: 769px) and (max-width: 1200px) {
+    .grid .col {
+        width: 33.33%;
+   
+    }
+    
+}
+@media all and (min-width: 1201px)  {
+    .grid .col {
+        width: 25%;
+   
+    }
+    
 }
