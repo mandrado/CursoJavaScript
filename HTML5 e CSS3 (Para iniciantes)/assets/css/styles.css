@@ -34,11 +34,16 @@ body {
 }
 
 .grid .col-content{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     background: blue;
     /* border-radius: 100px  100px 100px 100px; */
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    /* box-shadow: 10px 10px 0 0 red; */
+    /* box-shadow: -10px -10px 0px 0px red; */
+    box-shadow: inset 10px 10px 10px 5px red, 
+    10px 10px 5px rgba(0, 0, 0, 0.5),
+    inset -5px -5px 5px yellow;
 }
 p{
     clear: both;
