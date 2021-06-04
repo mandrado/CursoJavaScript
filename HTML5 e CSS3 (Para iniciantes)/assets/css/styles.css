@@ -34,9 +34,11 @@ body {
 }
 
 .grid .col-content{
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     background: blue;
+    /* border-radius: 100px  100px 100px 100px; */
+    border-radius: 50%;
 }
 p{
     clear: both;
