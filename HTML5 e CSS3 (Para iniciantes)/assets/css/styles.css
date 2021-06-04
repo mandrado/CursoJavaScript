@@ -4,120 +4,43 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+.flex-conteiner {
+    display: flex; /* se comporta como um block */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    background: yellow;
+    height: 600px;
 }
 
-body {
-    font-family: sans-serif;
-}
-
-.grid {
-    max-width: 1200px;
-    padding: 15px;
-    margin: 0 auto;
-    padding-top: 73px; 
-}
-
-.grid::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.grid .col {
-    /*     width: 33.33%; */
-    height: 300px;
-    float: left;
-    padding: 15px;
-    
-}
-
-.grid .col-content{
+.flex-item {
     width: 100%;
-    height: 100%;
-    background: blue;
-    /* border-radius: 100px  100px 100px 100px; */
-    /* border-radius: 50%; */
-    /* box-shadow: 10px 10px 0 0 red; */
-    /* box-shadow: -10px -10px 0px 0px red; */
-    box-shadow: inset 10px 10px 10px 5px red, 
-    10px 10px 5px rgba(0, 0, 0, 0.5),
-    inset -5px -5px 5px yellow;
+/*     flex-grow: 1;
+    flex-basis: 320px; */
+/*     flex: 1 1 320px; */
+   /* margin-bottom: 2%;  */
+/*     height: 200px; */
+    color: white;
+    background: red;
+/*     margin: 10px; */
+} 
+
+.flex-item:nth-child(2) {
+ /*    flex: 2 1 320px;
+    background: palevioletred; */
+    align-self: flex-end;
 }
-p{
-    clear: both;
+.flex-item:nth-child(3) {
+     align-self: center;
+}
+.flex-item:nth-child(5) {
+     align-self: stretch;
 }
 
-
-.menu {
-    width: 100%;
-    position: fixed;
-    background: gray;
+.flex-item:nth-child(3) {
+    order: 2;
 }
 
-.menu ul {
-    list-style: none;
-    display: block;
-    max-width: 1200px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
-
-.menu ul li {
-    float: left;
-}
-
-.menu ul li a {
-    display: block;
-    color: aliceblue;
-    padding: 20px;
-    text-decoration: none;
-    transition: all 300ms ease-in-out;
-}
-
-.menu ul li a:hover {
-    background: #333;
-}
-
-.full-page {
-    max-width: 100%;
-    margin: 0 auto;
-    padding-top: 73px;
-    height: 100vh;
-    background: turquoise; 
-}
-
-.full-page-content {
-    max-width: 1200px;
-    padding: 0 30px;
-}
-
-@media all and (max-width: 411px) {
-    .grid .col {
-        width: 100%;
-   
-    }
-    
-}
-@media all and (min-width: 412px) and (max-width: 768px) {
-    .grid .col {
-        width: 50%;
-   
-    }
-    
-}
-@media all and (min-width: 769px) and (max-width: 1200px) {
-    .grid .col {
-        width: 33.33%;
-   
-    }
-    
-}
-@media all and (min-width: 1201px)  {
-    .grid .col {
-        width: 25%;
-   
-    }
-    
+.flex-item:nth-child(2) {
+    order: 1;
 }
