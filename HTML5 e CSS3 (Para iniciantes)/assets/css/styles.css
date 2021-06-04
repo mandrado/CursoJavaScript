@@ -4,8 +4,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+}
+
 .grid {
-    padding: 15px;   
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+    padding-top: 73px; 
 }
 
 .grid::after{
@@ -15,11 +26,11 @@
 }
 
 .grid .col {
-/*     width: 33.33%; */
+    /*     width: 33.33%; */
     height: 300px;
     float: left;
     padding: 15px;
-
+    
 }
 
 .grid .col-content{
@@ -29,6 +40,50 @@
 }
 p{
     clear: both;
+}
+
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background: gray;
+}
+
+.menu ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    float: left;
+}
+
+.menu ul li a {
+    display: block;
+    color: aliceblue;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover {
+    background: #333;
+}
+
+.full-page {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 73px;
+    height: 100vh;
+    background: turquoise; 
+}
+
+.full-page-content {
+    max-width: 1200px;
+    padding: 0 30px;
 }
 
 @media all and (max-width: 411px) {
