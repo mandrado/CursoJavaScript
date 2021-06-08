@@ -9,15 +9,21 @@ body {
     font-size: 24px;
 }
 
-.grid {
-    max-width: 1200px;
+.container {
+    max-width: 1215px;
     margin: 0 auto;
+    overflow-x: hidden;
+    
+}
+
+.grid {
+    width: calc(100% + 15px);
     display: grid;
     /* grid-template-columns: 1fr 1fr repeat(8, 1fr) ; */
-    /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     /* grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr 2fr); */
-    grid-template-columns: 
+/*     grid-template-columns: 
         [um] 1fr
         [dois] 1fr
         [tres] 1fr
@@ -26,13 +32,18 @@ body {
         [um] 1fr
         [dois] 1fr
         [tres] 1fr
-        [quatro] 1fr;
-    gap: 15px;
+        [quatro] 1fr; */
+    /* gap: 15px; */
+/*     row-gap: 15px;
+    column-gap: 15px; */
+ /*    gap: 15px 15px; */
 }
 
 .grid div {
     background: tomato;
     min-height: 100px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .grid div:nth-child(5) {
@@ -46,7 +57,7 @@ body {
 /*     grid-column: um / quatro;
     grid-row: um / quatro; */
 /*     grid-area: um / um / quatro / quatro; */
-    grid-area: 1 / 1 / 4 / 4;
+/*     grid-area: 1 / 1 / 4 / 4; */
 }
 
 /* @media (max-width: 768px){
