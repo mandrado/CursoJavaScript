@@ -1,6 +1,7 @@
 :root {
     --primary-color: #0a1128;
     --white-color: #ffffff;
+    --light-gray-color: #eeeeee;
     --gap: 2rem;
 }
 
@@ -25,13 +26,12 @@ font-family: 'Open Sans', sans-serif;
  }
 
  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
- }
-
- h1 {
-     font-size: 2.5rem;
-
+     font-family: 'Montserrat', sans-serif;
+     text-transform: uppercase;
+    }
+    
+h1 {
+        font-size: 2.5rem;
  }
  h2 {
      font-size: 2.4rem;
@@ -52,13 +52,17 @@ font-family: 'Open Sans', sans-serif;
  h6 {
      font-size: 2rem;
 
- }
- .main-bg {
+    }
+.main-bg {
     background-image: url('../img/main-bg.svg');
     background-size: cover;
     background-position: center center;
     color: var(--white-color)
- }
+}
+
+a {
+   text-decoration: none;
+}
 
  .white-bg {
      background-color: var(--white-color);
@@ -72,4 +76,53 @@ font-family: 'Open Sans', sans-serif;
 
  .section {
     min-height: 100vh;
+ }
+
+ .menu {
+     background: var(--white-color);
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     border-bottom: 5px solid var(--light-gray-color);
+     
+ }
+ .menu-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 0;
+     padding-bottom: 0;
+ }
+ .menu h1 {
+     font-size: 1.8rem;
+ }
+
+ .menu ul {
+     list-style: none;
+     display: flex;
+ }
+ .menu ul a {
+     display: block;
+     padding: 1rem;
+     font-size: 1rem;
+     color: var(--primary-color);
+     position: relative;
+ }
+
+ .menu ul li a::after {
+     content: '';
+     position: absolute;
+     bottom: 1rem;
+     left: 50%;
+     width: 0%;
+     height: 0.2rem;
+     background: crimson;
+     transition: all 300ms ease-in-out;
+ }
+ .menu ul li a:hover::after {
+     left: 25%;
+     width: 50%;
+
  }
