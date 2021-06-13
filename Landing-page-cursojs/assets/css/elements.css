@@ -10,6 +10,7 @@ font-family: 'Open Sans', sans-serif;
 
  html{
      font-size: 62,5%;
+     scroll-behavior: smooth;
  }
 
  body {
@@ -27,6 +28,7 @@ h1 {
  }
  h2 {
      font-size: 2.4rem;
+     margin-bottom: 1rem;
 
  }
  h3 {
@@ -47,4 +49,7 @@ h1 {
 }
 a {
     text-decoration: none;
+ }
+ p {
+     margin-bottom: 2rem;
  }
