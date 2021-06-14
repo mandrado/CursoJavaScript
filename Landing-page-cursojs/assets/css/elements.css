@@ -15,7 +15,7 @@ font-family: 'Open Sans', sans-serif;
 
  body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
  }
 
  h1, h2, h3, h4, h5, h6 {
@@ -28,7 +28,7 @@ h1 {
  }
  h2 {
      font-size: 2.4rem;
-     margin-bottom: 1rem;
+     margin-bottom: 3rem;
 
  }
  h3 {

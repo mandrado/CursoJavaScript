@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .intro-text-content, .intro-img {
@@ -25,7 +25,7 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -33,7 +33,7 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .grid-main-heading {
@@ -51,9 +51,9 @@
     counter-reset: gridCounnter;
 }
 .grid h3 {
-    font-size: 1.5rem;
+    font-size: 1.1em;
     position: relative;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -61,7 +61,7 @@
     counter-increment: gridCounnter;
     content: counter(gridCounnter) ;
     position: absolute;
-    font-size: 5rem;
+    font-size: 4rem;
     font-style: italic;
     top: -2rem;
     left: -1rem;
