@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>605. Landing Page - Tabela de preços e ajustes</title>
+    <title>606. Landing Page - Form de contato e footer</title>
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/menu.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="main-bg">
+<body>
     <aside class="menu white-bg">
        <div class="main-content menu-content">
         <h1>
@@ -27,7 +27,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div> 
@@ -168,10 +168,53 @@
                     </tfoot>
                 </table>
             </div>
-
-        
-
         </div>
-    </section>    
+    </section>
+    <section id="contact" class="intro section main-bg">
+        <div class="main-content intro-content">
+            <div class="intro-text-content">
+                <h2>Contact US</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam et similique ad repellat dignissimos facere id obcaecati itaque perspiciatis debitis, assumenda libero? Animi laboriosam mollitia laudantium ullam! Soluta, dolorum perferendis!</p>
+            </div>
+            <div class="intro-img">
+                <img 
+                src="./assets/img/contact_us-not_optimized.svg" 
+                alt="Deseho de um homem segurando o logo no CSS, de uma mulhar empurrando o logo do Java Script e um home segurando o logo do HTML 5"
+                >
+            </div>
+            <div class="contact-form">
+                <fieldset class="form-grid">
+                    <legend>Contact me</legend>
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" name="first-name" id="first-name"
+                        placeholder="Seu primeiro nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name"
+                        placeholder="seu sobrenome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email"
+                        placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10" 
+                        placeholder="Escreva aqui sua mensagem"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Send message</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section> 
+    <footer id="footer" class="footer white-bg">
+        <p><a rel="nofollow" target="_blank" 
+            href="https://beacons.ai/"></a>Feito com <span class="heart">❤</span> por Mandrado</p>
+    </footer>   
 </body>
 </html>
