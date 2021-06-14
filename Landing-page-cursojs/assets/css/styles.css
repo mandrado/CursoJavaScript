@@ -90,6 +90,7 @@
     top: -2rem;
     left: -1rem;
     transform: rotate(5deg);
+}
 
 .gallery-img {
 
@@ -103,5 +104,6 @@
     transition: all 300ms ease-in-out;
 }
 .gallery-img img:hover {
-    transform: translate(-3rem, 3%) scale(1.2) rotate(5deg);
+    /* transform: translate(-3rem, 3%) scale(1.2) rotate(5deg); */
+    transform: translate(0, 10%) scale(1.2);
 }

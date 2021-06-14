@@ -53,3 +53,35 @@ a {
  p {
      margin-bottom: 2rem;
  }
+
+table {
+     min-width: 30rem;
+     width: 100%;
+     border-collapse: collapse;
+     
+}
+    
+table caption {
+    font-style: italic;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+}
+    
+table th {
+    padding: 0.5rem;
+    text-align: center;
+    border: 0.1rem solid var(--light-gray-color);
+    background: var(--light-gray-color);
+}
+table td {
+     padding: 0.25rem;
+     text-align: left;
+     border: 0.1rem solid var(--light-gray-color);
+ }
+ 
+ table tfoot td{
+     text-align: right;
+     background: var(--light-gray-color);
+
+ }
