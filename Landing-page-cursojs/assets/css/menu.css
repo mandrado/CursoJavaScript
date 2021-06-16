@@ -5,7 +5,7 @@
     right: 0;
     width: 100%;
     z-index: 1;
-    border-bottom: 0.2rem solid var(--light-gray-color);
+    border-bottom: 0.1rem solid var(--light-gray-color);
     
 }
 .menu-content {
@@ -16,8 +16,13 @@
     padding-bottom: 0;
 }
 .menu h1 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
+    color: var (--primary-color);
 }
+
+.menu h1 a {
+    color: inherit;
+  }
 
 .menu ul {
     list-style: none;
@@ -25,8 +30,8 @@
 }
 .menu ul a {
     display: block;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 2rem;
+    font-size: 1.8rem;
     color: var(--primary-color);
     position: relative;
 }
@@ -42,7 +47,7 @@
     transition: all 300ms ease-in-out;
 }
 .menu ul li a:hover::after {
-    left: 25%;
     width: 50%;
+    left: 25%;
 
 }

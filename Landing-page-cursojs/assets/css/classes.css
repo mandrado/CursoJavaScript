@@ -24,10 +24,9 @@
  .menu-spacing {
      height: 6.5rem;
  }
-
- .responsive-table {
-    width: 100%;
-    overflow: hidden;
-    overflow-x: auto;
-}
+ 
+ body .full-width {
+     width: 100%;
+     flex:  1 1 100%;
+ }
 
