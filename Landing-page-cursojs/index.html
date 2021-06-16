@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>607. Landing Page - Media Queries</title>
+    <title>608. Menu mobile e back to top</title>
     <link rel = "preconnect" href = "https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,13 +15,17 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+
+    <label for="close-menu" class="close-menu-label" title="Close menu"></label>
+    <input type="checkbox" id="close-menu" class="close-menu" aria-label="Close menu" role="button">
+
     <aside class="menu white-bg">
        <div class="main-content menu-content">
-        <h1>
+        <h1 onclick="getElementById('close-menu').checked = false;">
             <a href="#">LOGO</a>
         </h1>
-        <nav>
-            <ul>
+        <nav >
+            <ul onclick="getElementById('close-menu').checked = false;">
                 <li><a href="#intro">intro</a></li>
                 <li><a href="#top3">Top 3</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -215,6 +219,8 @@
     <footer id="footer" class="footer white-bg">
         <p><a rel="nofollow" target="_blank" 
             href="https://beacons.ai/"></a>Feito com <span class="heart">❤</span> por Mandrado</p>
-    </footer>   
+    </footer>
+    
+    <a href="#" class="back-to-top">➠</a>
 </body>
 </html>
