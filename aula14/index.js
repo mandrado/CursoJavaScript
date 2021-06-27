@@ -32,6 +32,8 @@ num1 += num2; // num1 = num1 + num2
 num1 += num2; // 0.9
 num1 += num2; // 1.0
 // arredionda o número para corrigir os valores decimais incorretos.
+// há uma certa imprecisão nos valores decimais, que podem ser corrigidas
+// utilizando parseFloat(x.toFixed(2)) ou Number(x.toFixed(2))
 num1 = parseFloat(num1.toFixed(2));
 console.log(num1);
 num1 += num2; // 1.1
