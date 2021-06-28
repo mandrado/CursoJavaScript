@@ -36,6 +36,19 @@ function meuEscopo(){
          const sobrenome = meuForm.querySelector('.sobrenome');
          const peso = meuForm.querySelector('.peso');
          const altura = meuForm.querySelector('.altura');
+
+         pessoas.push({
+             nome: nome.value,
+             sobrenome: sobrenome.value,
+             peso: peso.value,
+             altura: altura.value
+         });
+
+         console.log(pessoas);
+
+         resultado.innerHTML += `<p> ${nome.value}, ${sobrenome.value}, ${peso.value}, ${altura.value} </p>`;
+
+        /* 
          console.log(nome.value, sobrenome.value, peso.value, altura.value);
          const pessoa = criaPessoa(nome.value, sobrenome.value, peso.value, altura.value);
          pessoas.push(pessoa);
@@ -43,9 +56,9 @@ function meuEscopo(){
          resultado.innerHTML = `<p> Quantidade de pessoas na lista: ${pessoas.length} </p>`;
          for (let index = 0; index < pessoas.length; index++) {
              resultado.innerHTML += `<p> ${pessoas[index].nome}, ${pessoas[index].sobrenome}, ${pessoas[index].peso}, ${pessoas[index].altura} </p>`;
-          
+       
          };
-        
+         */
      }
     meuForm.addEventListener('submit', recebeEventoForm);
 }
