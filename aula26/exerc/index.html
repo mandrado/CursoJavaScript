@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>42. Modelo HTML e CSS para exercícios posteriores</title>
+    <title>Calcule seu IMC</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -43,18 +43,18 @@
             </tr>
         </table>
         <h1>Calcule seu IMC</h1>
-        <form class="form" action="" method="get">
+        <form id="formulario" class="form" action="" method="post">
             <p>
                 <label for="peso">Peso:</label>
-                <input type="text" id="peso" class="peso">
+                <input type="text" id="peso" name="peso" class="peso">
             </p>
             <p>
                 <label for="altura">Altura:</label>
-                <input type="text" id="altura" class="altura">
+                <input type="text" id="altura" name="altura" class="altura">
             </p>
-            <button>Calcular</button>
+            <button type="submit" >Calcular</button>
         </form>
-        <div class="resultado">
+        <div id="resultado">
             
         </div>
     </section>

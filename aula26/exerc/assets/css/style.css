@@ -71,14 +71,23 @@ form button:active {
 background: var(--primary-color-light);
 }
 
-div.resultado{
+/* div#resultado{
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary-color-light);
     height: 50px;
     border-radius: 10px;
+} */
+.p-resultado, .p-resultado-bad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 204, 8, 0.753);
+    height: 50px;
+    border-radius: 10px;
 }
-div.resultado p{
-    margin: 0 ;
+
+.p-resultado-bad {
+    background: rgb(238, 121, 11);
 }
