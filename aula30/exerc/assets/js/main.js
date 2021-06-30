@@ -1,6 +1,6 @@
 const h1 = document.querySelector('.container h1');
 
-const dataAtual = new Date(Date.now());
+const dataAtual = new Date();
 
 function diaSemanaTexto(diaSemana) {
     let diaSemanaTexto;
@@ -108,4 +108,3 @@ console.log(dataAtual.getMonth());
 h1.innerHTML = criaData(dataAtual)
 
 console.log(`${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`);
-
