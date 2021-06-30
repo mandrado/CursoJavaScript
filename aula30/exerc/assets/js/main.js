@@ -1,3 +1,7 @@
+const h1 = document.querySelector('.container h1');
+
+const dataAtual = new Date(Date.now());
+
 function diaSemanaTexto(diaSemana) {
     let diaSemanaTexto;
     switch (diaSemana) {
@@ -89,20 +93,19 @@ function formatHora(hora) {
     return `${hs}:${min}`
 }
 
+function criaData(data) {
+    const diaSemanaTxt = diaSemanaTexto(data.getDay());
+    const mes = mesTexto(data.getMonth());
+    const hora = formatHora(data);
+    
+    return (`${diaSemanaTxt}, ${data.getDate()} de ${mes} de ${data.getFullYear()} ${hora}`);
+    
+}
 
-const dataAtual = new Date(Date.now());
 //const dataAtual = new Date('2019-5-5 1:3:15');
 console.log(dataAtual.getMonth());
 
-const diaSemanaTxt = diaSemanaTexto(dataAtual.getDay());
-const mes = mesTexto(dataAtual.getMonth());
-
-const hora = formatHora(dataAtual);
-
-const msg = `${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`;
-
-const myHtml = document.querySelector('#data');
-myHtml.innerHTML = msg;
+h1.innerHTML = criaData(dataAtual)
 
 console.log(`${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`);
 
