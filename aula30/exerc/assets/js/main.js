@@ -2,7 +2,7 @@ const h1 = document.querySelector('.container h1');
 
 const dataAtual = new Date();
 
-function diaSemanaTexto(diaSemana) {
+/* function diaSemanaTexto(diaSemana) {
     let diaSemanaTexto;
     switch (diaSemana) {
         case 0:
@@ -105,6 +105,15 @@ function criaData(data) {
 //const dataAtual = new Date('2019-5-5 1:3:15');
 console.log(dataAtual.getMonth());
 
-h1.innerHTML = criaData(dataAtual)
-
 console.log(`${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`);
+
+h1.innerHTML = criaData(dataAtual)
+ */
+
+/* const opcoes = {
+    dateStyle: 'full',
+    timeStyle: 'Short'
+}; */
+
+h1.innerHTML = dataAtual.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
+//h1.innerHTML = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'short'}).format(dataAtual);
