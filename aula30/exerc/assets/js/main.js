@@ -2,85 +2,15 @@ const h1 = document.querySelector('.container h1');
 
 const dataAtual = new Date();
 
-/* function diaSemanaTexto(diaSemana) {
-    let diaSemanaTexto;
-    switch (diaSemana) {
-        case 0:
-            diaSemanaTexto = 'Domingo';
-            break;
-        case 1:
-            diaSemanaTexto = 'Segunda-feira';
-            break;
-        case 2:
-            diaSemanaTexto = 'Terça-feira';
-            break;
-        case 3:
-            diaSemanaTexto = 'Quarta-feira';
-            break;
-        case 4:
-            diaSemanaTexto = 'Quinta-feira';
-            break;
-        case 5:
-            diaSemanaTexto = 'Sexta-feira';
-            break;
-        case 6:
-            diaSemanaTexto = 'Sábado';
-            break;
-    
-        default:
-            diaSemanaTexto = 'Dia da semana incorreto';
-            break;
-    }
-
-    return diaSemanaTexto;
-    
+function diaSemanaTexto(diaSemana) {
+    const diaSemanaTexto = ['domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+    return diaSemanaTexto[diaSemana];
 }
 
 function mesTexto(mes) {
-    let mestxt;
-    switch (mes) {
-        case 0:
-            mestxt = 'janeiro'
-            break;
-        case 1:
-            mestxt = 'fevereiro'
-            break;
-        case 2:
-            mestxt = 'março'
-            break;
-        case 3:
-            mestxt = 'abril'
-            break;
-        case 4:
-            mestxt = 'maio'
-            break;
-        case 5:
-            mestxt = 'junho'
-            break;
-        case 6:
-            mestxt = 'julho'
-            break;
-        case 7:
-            mestxt = 'agosto'
-            break;
-        case 8:
-            mestxt = 'setembro'
-            break;
-        case 9:
-            mestxt = 'outubro'
-            break;
-        case 10:
-            mestxt = 'novembro'
-            break;
-        case 11:
-            mestxt = 'dezembro'
-            break;
-    
-        default:
-            mestxt = 'mes incorreto.'
-            break;
-    }
-    return mestxt;
+    const mestxt = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 
+        'julho', 'agosto', 'setembro', 'outubro','novembro', 'dezembro'];
+    return mestxt[mes];
 }
 
 function zeroEsquerda(num) {
@@ -105,15 +35,15 @@ function criaData(data) {
 //const dataAtual = new Date('2019-5-5 1:3:15');
 console.log(dataAtual.getMonth());
 
-console.log(`${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`);
+//console.log(`${diaSemanaTxt}, ${dataAtual.getDate()} de ${mes} de ${dataAtual.getFullYear()} ${hora}`);
 
-h1.innerHTML = criaData(dataAtual)
- */
+h1.innerHTML = criaData(dataAtual);
+
 
 /* const opcoes = {
     dateStyle: 'full',
     timeStyle: 'Short'
 }; */
 
-h1.innerHTML = dataAtual.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
+//h1.innerHTML = dataAtual.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'short'});
 //h1.innerHTML = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'short'}).format(dataAtual);
