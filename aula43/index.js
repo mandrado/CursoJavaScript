@@ -13,25 +13,40 @@
 function fizzBuzz(x) {
 
     if (isNaN(x)) {
-        console.log(`${x} NÃO um número!`);
-    }else
-    if ((x % 3 === 0) && (x % 5 === 0)) {
-        console.log(`FizzBuzz: ${x} é divisivel por 3 e por 5`);
+        return `${x} NÃO um número!`;
     } else
-        if ((x % 3 === 0)) {
-            console.log(`Fizz: ${x} é divisivel por 3`);
-    } else
-        if ((x % 5 === 0)) {
-                console.log(`Buzz: ${x} é divisivel por 5`);
-    }else{
-        console.log(`${x} NÃO é divisivel por 3 e/ou 5`);
-    }
+        if ((x % 3 === 0) && (x % 5 === 0)) {
+            return `FizzBuzz: ${x} é divisivel por 3 e por 5`;
+        } else
+            if ((x % 3 === 0)) {
+                return `Fizz: ${x} é divisivel por 3`;
+            } else
+                if ((x % 5 === 0)) {
+                    return `Buzz: ${x} é divisivel por 5`;
+                } else {
+                    return `${x} NÃO é divisivel por 3 e/ou 5`;
+                }
 }
 
 fizzBuzz('1');
 
 let i = 0
 do {
-    fizzBuzz(i);
+    console.log(fizzBuzz(i));
     i++
-} while (i<=100);
+} while (i <= 100);
+
+
+// Versão do professor:
+function fizzBuzzProf(numero) {
+    if (typeof numero !== 'number') return numero;
+    if (numero % 3 === 0 && numero % 5 === 0) return 'FizzBuzz';
+    if (numero % 3 === 0) return 'Fizz';
+    if (numero % 5 === 0) return 'Buzz';
+    return numero;
+}
+console.log('a', fizzBuzzProf('a'));
+
+for (let i = 0; i <= 100; i++) {
+    console.log(i, fizzBuzzProf(i));
+}
