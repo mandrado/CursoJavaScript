@@ -69,3 +69,7 @@ background: var(--primary-color-light);
 .relogio{
     font-size: 3em;
 }
+
+.pausa{
+    color: red;
+}

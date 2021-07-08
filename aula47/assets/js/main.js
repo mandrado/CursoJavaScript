@@ -1,3 +1,5 @@
+//66. Exercício - Criando um timer com setInterval
+
 const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
@@ -20,23 +22,44 @@ function iniciarTimer() {
     }, 1000);
 }
 
-iniciar.addEventListener('click', function (event) {
+document.addEventListener('click', function (e) {
+    const el = e.target;
+
+    if (el.classList.contains('iniciar')) {
+        clearInterval(timer);
+        iniciarTimer();
+        relogio.classList.remove('pausa');
+    }
+    if (el.classList.contains('pausar')) {
+        clearInterval(timer);
+        relogio.classList.add('pausa');
+    }
+    if (el.classList.contains('zerar')) {
+        clearInterval(timer);
+        segundos = 0;
+        relogio.innerHTML = '00:00:00';
+        relogio.classList.remove('pausa')
+    }
+    
+});
+
+/* iniciar.addEventListener('click', function (event) {
     clearInterval(timer);
     iniciarTimer();
     relogio.style.color = 'black';
-});
+}); */
 
-pausar.addEventListener('click', function (event) {
+/* pausar.addEventListener('click', function (event) {
     clearInterval(timer);
     relogio.style.color = 'red';
-});
+}); */
 
-zerar.addEventListener('click', function (event) {
+/* zerar.addEventListener('click', function (event) {
     clearInterval(timer);
     segundos = 0;
     relogio.innerHTML = '00:00:00';
     relogio.style.color = 'black';
-});
+}); */
 
 
 
