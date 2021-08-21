@@ -1,5 +1,5 @@
 /**
- * 97. Exercício - Validando um CPF (Algoritmo)
+ * 98. Exercício - Validando um CPF (Solução)
  * 
  * 705.484.450-52
  * 
@@ -8,7 +8,7 @@
  * 
  * 7x   0x  5x  4x  8x  4x  4x  5x  0x
  * 10   9   8   7   6   5   4   3   2
- * 70   0   40  58  48  20  16  15  0 = 237
+ * 70   0   40  28  48  20  16  15  0 = 237
  * 
  * Obter o resto da divisão e subtrair de 11, se maior que 9, considerar ele como 0
  * 11 - (237 % 11) = 5 *(Primeiro dígito)
@@ -26,14 +26,62 @@
  * 
  */
 
-// limpar o CPF
-let cpf = '705.484.450-52'
-// substituir tudo que não for número por nada
-let cpflimpo = cpf.replace(/\D+/g, '');
-cpfArray = Array.from(cpflimpo);
+// // limpar o CPF
+// let cpf = '705.484.450-52'
+// // substituir tudo que não for número por nada
+// let cpflimpo = cpf.replace(/\D+/g, '');
+// cpfArray = Array.from(cpflimpo);
 
-console.log(cpfArray.map(el => el));
-console.log(cpfArray.reduce((ac, val) => ac + val));
-console.log(cpfArray.reduce((ac, val) => ac + Number(val), 0));
+// console.log(cpfArray.map(el => el));
+// console.log(cpfArray.reduce((ac, val) => ac + val));
+// console.log(cpfArray.reduce((ac, val) => ac + Number(val), 0));
 
+function ValidaCPF(cpfEnviado) {
+    Object.defineProperty(this, 'cpfLimpo', {
+        get: function () {
+            return cpfEnviado.replace(/\D+/g, '');
+        }
+    });
+}
+
+ValidaCPF.prototype.valida = function () {
+    if (typeof this.cpfLimpo === 'undefined') return false;
+    if (this.cpfLimpo.length !== 11) return false;
+    if (this.isSequencia()) return false;
+    const cpfParcial = this.cpfLimpo.slice(0, -2);
+    const digito1 = this.criaDigito(cpfParcial);
+    const digito2 = this.criaDigito(cpfParcial + digito1);
+    //console.log(digito1);
+    //console.log(digito2);
+    const novoCpf = cpfParcial + digito1 + digito2;
+    console.log(novoCpf, this.cpfLimpo);
+    return novoCpf === this.cpfLimpo;
+};
+
+ValidaCPF.prototype.criaDigito = function (cpfParcial) {
+    const cpfArray = Array.from(cpfParcial);
+    let regressivo = cpfArray.length + 1;
+    const total = cpfArray.reduce((ac, val) => {
+        ac += (regressivo * Number(val));
+        regressivo--;
+        return ac
+    }, 0);
+    //console.log(cpfArray);
+    const digito = 11 - (total % 11);
+    return digito > 9 ? '0' : String(digito);
+};
+
+ValidaCPF.prototype.isSequencia = function () {
+    const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
+    return sequencia === this.cpfLimpo;
+}
+
+const cpf = new ValidaCPF('070.987.721-03');
+//console.log(cpf.cpfLimpo);
+//console.log(cpf.valida());
+if (cpf.valida()) {
+    console.log('CPF válido:', cpf.cpfLimpo);
+} else {
+    console.log('CPF inválido:', cpf.cpfLimpo);
+}
 
