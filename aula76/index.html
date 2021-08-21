@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>95. Herança</title>
+    <title>96. Herança?</title>
+    <style>
+        body {background-color:white;padding:50px 50px}
+
+        pre {
+          background-color:#eee;
+          overflow:auto;
+          margin:0 0 1em;
+          padding:.5em 1em;
+        }
+        
+        pre code,
+        pre .line-number {
+          /* Ukuran line-height antara teks di dalam tag <code> dan <span class="line-number"> harus sama! */
+          font:normal normal 12px/14px "Courier New",Courier,Monospace;
+          color:black;
+          display:block;
+        }
+        
+        pre .line-number {
+          float:left;
+          margin:0 1em 0 -1em;
+          border-right:1px solid;
+          text-align:right;
+        }
+        
+        pre .line-number span {
+          display:block;
+          padding:0 .5em 0 1em;
+        }
+        
+        pre .cl {
+          display:block;
+          clear:both;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>Herança?</h1>
+    <p>O termo "Herança" é muito usado para descrever que as características de um objeto são
+        passadas para outro objeto. Assim como uma filha ou filho pode herdar características
+        da sua mãe ou pai (geneticamente). Por isso estamos usando esse termo para descrever
+        o comportamento desejado. Além disso, a maioria das literaturas, incluindo as
+        documentações (como <a
+            href="https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Objetos/Heran%C3%A7a">MDN</a>)
+        citam a palavra herança.</p>
+    <p>Vamos continuar usando o termo "Herança" até o final do curso, porém, Javascript não
+        é uma linguagem que apresenta essa característica em específico, portanto não existe
+        "herança" aqui. O que ocorre, na verdade, é "delegação". Esse seria o termo mais
+        correto para descrever "Herança" em JS.</p>
+    <p>Quando fazemos algo como:</p>
+<pre><code>function Produto(nome, preco) {
+    this.nome = nome;
+    this.preco = preco;
+}
+                   
+Produto.prototype.aumento = function (quantia) {
+    this.preco += quantia;
+};
+                   
+function Camiseta(nome, preco, cor) {
+    Produto.call(this, nome, preco);
+    this.cor = cor;
+}
+
+Camiseta.prototype = Object.create(Produto.prototype);
+Camiseta.prototype.constructor = Camiseta;</code></pre>
+    <p> Mais especificamente no trecho:</p>
+    <pre><code>Camiseta.prototype = Object.create(Produto.prototype);</code></pre>
+    <p>Estamos, claramente, falando que o <span style="background-color:#eee; font-family: 'Courier New', Courier, monospace;">Camiseta.prototype</span> é um novo
+    Dessa forma, estamos adicionando <span style="background-color:#eee; font-family: 'Courier New', Courier, monospace;">Camiseta.prototype</span> na cadeia
+    de protótipos de Produto. Por consequência, tudo o que não existir
+    em Camiseta nem em <span style="background-color:#eee; font-family: 'Courier New', Courier, monospace;">Camiseta.prototype</span> será delegado
+    para <span style="background-color:#eee; font-family: 'Courier New', Courier, monospace;">Produto.prototype</span> (e assim por diante até chegar no topo da
+    cadeia de protótipos). Por isso vejo o termo delegação como mais
+    adequado para este comportamento.</p>
+    <p>Novamente, vamos continuar usando o termo "Herança", mas achei que
+        seria interessante que você soubesse disso neste momento.</p>
+
     <script src="./index.js"></script>
+    <script>
+        (function() {
+            var pre = document.getElementsByTagName('pre'),
+                pl = pre.length;
+            for (var i = 0; i < pl; i++) {
+                pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>';
+                var num = pre[i].innerHTML.split(/\n/).length;
+                for (var j = 0; j < num; j++) {
+                    var line_num = pre[i].getElementsByTagName('span')[0];
+                    line_num.innerHTML += '<span>' + (j + 1) + '</span>';
+                }
+            }
+        })();
+    </script>
 </body>
+
 </html>
