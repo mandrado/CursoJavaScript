@@ -8,8 +8,6 @@
  * 
  * */
 
-const { func } = require("joi");
-
 function rand(min, max) {
     min *= 1000;
     max *= 1000;
