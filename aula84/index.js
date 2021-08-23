@@ -21,13 +21,17 @@ class ValidaCPF {
 
     geraNovoCpf(){
         const cpfSemDigitos = this.cpfLimpo.slice(0, -2);
-        const digito1 = this.geraDigito(cpfSemDigitos);
-        const digito2 = this.geraDigito(cpfSemDigitos + digito1);
+        // quando transformo um método em estático
+        // para chamar ele eu não poosso mais utilizar this, mas sim o nome da classe        
+        // const digito1 = this.geraDigito(cpfSemDigitos);
+        const digito1 = ValidaCPF.geraDigito(cpfSemDigitos);
+        const digito2 = ValidaCPF.geraDigito(cpfSemDigitos + digito1);
         this.novoCPF = cpfSemDigitos + digito1 + digito2;
 
     }
-
-    geraDigito(cpfSemDigitos){
+    // quando eu não utilixo a palavra this dentro do método
+    // isso quer dizer que ele pode se tornar estático
+    static geraDigito(cpfSemDigitos){
         let total = 0
         let reverso = cpfSemDigitos.length + 1;
 
