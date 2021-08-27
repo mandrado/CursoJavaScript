@@ -9,21 +9,21 @@
 
 // Criar uma função para fazer requisição Ajax XMLHttpRequest
 const request = obj => {
-    const xhr = new XMLHttpRequest();
-    //xhr.open('GET', 'URL', true);
-    xhr.open(obj.method, obj.url, true);
-    xhr.send();
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        //xhr.open('GET', 'URL', true);
+        xhr.open(obj.method, obj.url, true);
+        xhr.send();
 
-
-    //adicionar o evento para carregar a página
-    xhr.addEventListener('load', () => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            obj.sucess(xhr.responseText);
-        } else {
-            obj.error(xhr.statusText);
-        }
+        //adicionar o evento para carregar a página
+        xhr.addEventListener('load', () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.responseText);
+            } else {
+                reject(xhr.statusText);
+            }
+        });
     });
-
 };
 
 document.addEventListener('click', e => {
@@ -40,22 +40,18 @@ document.addEventListener('click', e => {
 
 function carregaPagina(el) {
     const href = el.getAttribute('href');
-   // console.log(href);
+    // console.log(href);
 
-    request({
+    const objConfig = {
         method: 'GET',
-        url: href,
-        sucess(response) {
-            carregaResultado(response);
-        },
-        error(errorText) {
-            console.log(errorText);
-        }
-    });
+        url: href
+    }
+    request(objConfig).then(response => {
+        carregaResultado(response);
+    }).catch(error => console.log(error));
 }
 
 function carregaResultado(response) {
     const resultado = document.querySelector('.resultado');
     resultado.innerHTML = response;
 }
-
