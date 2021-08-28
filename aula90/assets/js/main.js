@@ -23,20 +23,23 @@ document.addEventListener('click', e => {
 
     if (tag === 'a') {
         e.preventDefault();
-        carregaPagina(el)
+        carregaPagina(el);
     }
 })
 
-function carregaPagina(el) {
-    const href = el.getAttribute('href');
-
-    fetch(href)
-        .then(resposta => {
-            if (resposta.status < 200 || resposta.status > 299) throw new Error('Erro 404 NOSSO');
-            return resposta.text();
-        })
-        .then(html => carregaResultado(html))
-        .catch(e => console.error(e));
+async function carregaPagina(el) {
+    try {
+        const href = el.getAttribute('href');
+        const response = await fetch(href);
+    
+        if (response.status < 200 || response.status > 299) throw new Error('Erro 404 NOSSO');
+        
+        const html = await response.text();
+        carregaResultado(html);
+        
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 function carregaResultado(response) {
