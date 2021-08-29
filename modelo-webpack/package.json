@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "gera": "webpack -w"
+    "dev": "webpack -w"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
-    "regenerator-runtime": "^0.13.3"
+    "css-loader": "^3.2.0",
+    "regenerator-runtime": "^0.13.3",
+    "style-loader": "^1.0.0"
   }
 }

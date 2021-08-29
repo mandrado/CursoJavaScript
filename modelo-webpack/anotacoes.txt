@@ -1,0 +1,4 @@
+# comandos
+npm install
+npm install style-loader@1.0.0 css-loader@3.2.0
+npm run dev
