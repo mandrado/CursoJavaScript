@@ -1,0 +1,11 @@
+Anotações aula 93
+
+Comandos no terminal:
+
+npm init -y
+npm i --save-dev @babel/cli@7.6.4 @babel/core@7.6.4 @babel/preset-env@7.6.3 babel-loader@8.0.6 core-js@2.6.10 regenerator-runtime@0.13.3 webpack@4.41.2 webpack-cli@3.3.9 
+
+Criar o arquivo webpack.config.js
+
+Rodar o script do webpack
+npm run gera
