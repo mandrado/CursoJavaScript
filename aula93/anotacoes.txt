@@ -9,3 +9,16 @@ Criar o arquivo webpack.config.js
 
 Rodar o script do webpack
 npm run gera
+
+117. Correção core-js (de v2 para v3)
+
+Mudança do core-js e regenerator-runtime de devDependências para dependências no arquivo package.json
+Removido:
+    "core-js": "^2.6.10",
+    "regenerator-runtime": "^0.13.3",
+
+#Rodar no terminal:
+npm i core-js@3.3.2  regenerator-runtime@0.13.3
+
+Tive que corrigir manualmente o arquivo package.json para corresponder com o do professor.
+
