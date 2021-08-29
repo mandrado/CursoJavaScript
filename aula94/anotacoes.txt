@@ -1,0 +1,3 @@
+# Rodar os comandos
+npm install
+npm run gera
