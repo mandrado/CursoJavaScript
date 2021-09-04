@@ -1,0 +1,3 @@
+cd aula01
+npm init -y
+npm i axios
