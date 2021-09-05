@@ -1,0 +1,53 @@
+# 126. NPM - Node Package Manager
+
+cd aula03
+npm init -y
+
+# instalando pacotes
+# na aula foi instalado sem a versão, para este aprendizado usarei a mesma versão
+# acrescentado a opção -E para ele instalar a versão exata e não permitir que seja atualizada.
+# acrescentando a opção --save-dev iremos mover a dependencia para a área das dependencias de 
+# desenvolvimento:
+
+npm install express@4.17.1 -E --save-dev
+
+# para retornar a dependencia para as dependencias de produção
+
+npm install express@4.17.1 -E --save-prod
+
+# versões 2.1.0
+
+# 2.      1.      0.
+# major   minor   patch
+
+# major : nova versão com quebra de compatibilidade com a versão anterior.
+# minor : novas funcionalidades sem quebra de compatibilidade
+# patch : muda-se quando houver correção de bugs
+
+# quando digitamos npm update e as dependencias que possuem ^, atualizamos a partir da 
+# minor e patch, não atualizando a versão major.
+
+# quando digitamos npm update e as dependencias que possuem ~, atualizamos a partir da 
+# patch, não atualizando a versão major.
+
+# desinstalando uma versão
+
+npm uninstall express
+
+# listar pacotes instalados
+
+npm ls
+
+# listar somente os pacotes instalados sem mostrar a arvore de dependencias
+# por padrão é --depth=0, para ver a arvore informar o número da profundidade
+
+npm ls --depth=1
+
+# listar as dependencias desatualizadas e as versões atuais
+
+npm outdated
+
+# atualizar os pacotes
+
+npm update
+
