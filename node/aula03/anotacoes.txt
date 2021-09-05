@@ -51,3 +51,10 @@ npm outdated
 
 npm update
 
+
+# 127. Atualizando o Node para v12.x LTS
+# removida a versão 14.17.0 e instalada a versão 12.13.0
+# 
+# Index of /download/release/v12.13.0/
+# https://nodejs.org/download/release/v12.13.0/node-v12.13.0-x64.msi
+
