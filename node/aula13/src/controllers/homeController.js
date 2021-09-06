@@ -1,12 +1,13 @@
 const exp = require("constants");
 
-exports.paginaInicial = (req, res, next) => {
-    console.log('Respondendo ao cliente.');
+exports.paginaInicial = (req, res) => {
     res.render('index');
-    console.log(`'paginaInicial': Olha o que tem na req.session.nome ${req.session.nome}`);
-    next();
+    // acabando a função aqui.
+    return;
 };
 
-exports.trataPost = (req, res) =>{
-    res.send("Ei, agora sou sua nova rota de Post.")
+exports.trataPost = (req, res) => {
+    res.send(req.body);
+    // acabando a função aqui.
+    return;
 };

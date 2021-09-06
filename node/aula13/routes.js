@@ -24,21 +24,8 @@ const route = express.Router();
 const homeController = require('./src/controllers/homeController');
 const contaController = require('./src/controllers/contatoController');
 
-// Função Middleware
-function meuMiddleware(req, res, next) {
-    req.session = {nome: 'Mandrado', sobrenome: 'Santos'}
-    console.log();
-    console.log('Passei no seu Middleware.');
-    console.log();
-    next();
-}
-
 // Rotas da home
-route.get('/', meuMiddleware, homeController.paginaInicial, function(req, res, next) {
-    console.log();
-    console.log('Ainda estou aqui...');
-    console.log(`'meuMiddleware': Olha o que tem na req.session.nome ${req.session.nome}`);
-});
+route.get('/', homeController.paginaInicial);
 route.post('/', homeController.trataPost);
 
 // Rotas do Contato
