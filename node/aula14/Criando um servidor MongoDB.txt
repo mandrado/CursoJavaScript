@@ -1,0 +1,91 @@
+138. Criando um servidor MongoDB
+
+https://www.mongodb.com/cloud/atlas
+
+mandrado@gmail.com
+
+********* --> pasta 'Curso SQL Completo'
+
+Organização: Mandrado
+Sua organização pode ser uma empresa, equipe ou indivíduo
+
+Nome do Projeto: cursojs01
+Use projetos para isolar ambientes diferentes (desenvolvimento / teste / produção)
+
+Qual é o seu idioma preferido? JavaScript
+Usaremos isso para personalizar amostras de código e conteúdo que compartilhamos com você. Você sempre pode mudar isso mais tarde.
+
+
+Implantar um banco de dados em nuvem
+Experimente o melhor do MongoDB no AWS, Azure e Google Cloud.
+Escolha uma opção de implantação para começar: Compartilhado (FREE=Shared)
+Para aprender e explorar MongoDB em um ambiente de nuvem. Opções de configuração básica.
+
+Crie um cluster compartilhado
+Bem-vindo ao MongoDB Atlas ! Recomendamos algumas de nossas opções mais populares, mas sinta-se à vontade para personalizar seu cluster de acordo com suas necessidades. Para mais informações, verifique nossa documentação.
+SEM CUSTOS: Compartilhado
+
+Provedor de nuvem e região:
+AWS, N. Virginia (us-east-1)
+
+
+Cluster Tier:
+Sandbox M0 (RAM compartilhada, armazenamento de 512 MB)
+Criptografado
+
+A taxa horária básica é para um conjunto de réplicas do MongoDB com 3 servidores de suporte de dados .
+
+Clusters compartilhados para ambientes de desenvolvimento e aplicativos de baixo tráfego:
+Os clusters M0 são os melhores para começar e não são adequados para ambientes de produção.
+500 conexões máximas
+Baixo desempenho de rede
+100 bancos de dados máximos
+500 coleções máximas
+M2: Compartilhado: 2 GB: Compartilhado: $ 9 / MÊS
+M5: Compartilhado: 5 GB: Compartilhado: $ 25 / MÊS
+Configurações adicionais: MongoDB 4.4, sem backup
+
+Nome do Cluster: Cluster0
+
+Adicionar novo usuário de banco de dados
+Crie um usuário de banco de dados para conceder a um aplicativo ou usuário acesso a bancos de dados e coleções em seus clusters neste projeto Atlas. 
+Password Authentication: userdba
+********* --> pasta 'Curso SQL Completo'
+
+Network Access
+IP Access List
+Acesso à rede
+Lista De Acesso IP
+Adicione um endereço IP
+Configure quais endereços IP podem acessar seu cluster.
+
+ALLOW ACCESS FROM ANYWHERE
+0.0.0.0/0
+PERMITIR ACESSO DE QUALQUER LUGAR
+
+Copiar a URL de Conexão
+Database Deployments
+
+Cluster0 -> Connect
+Conecte-se ao Cluster0
+
+Escolha um método de conexão
+Obtenha sua string de conexão pré-formatada selecionando sua ferramenta abaixo.
+
+Conecte seu aplicativo
+Conecte seu aplicativo ao cluster usando os drivers nativos do MongoDB
+
+mongodb+srv://userdba:<password>@cluster0.pbdlo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+139. Solução de problemas - Re-criando o projeto usando Atlas e Compass
+
+Como a GUI do MongoDB, o MongoDB Compass permite que você tome decisões mais inteligentes sobre a estrutura, consulta, indexação, validação de documentos e muito mais. As assinaturas comerciais incluem suporte técnico para MongoDB Compass.
+
+https://www.mongodb.com/try/download/compass
+https://downloads.mongodb.com/compass/mongodb-compass-1.28.4-win32-x64.exe
+https://downloads.mongodb.com/compass/mongodb-compass-1.12.0-win32-x64.exe
+
+mongodb+srv://userdba:M0ng04d1m@cluster0.pbdlo.mongodb.net/test
+
+140. MongoDB - Conexão e primeiro Model
+
