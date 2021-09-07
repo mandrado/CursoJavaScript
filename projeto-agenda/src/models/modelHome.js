@@ -6,11 +6,11 @@
 
 const mongoose = require('mongoose');
 
-const HomeSchema = new mongoose.Schema({
+const schemaHome = new mongoose.Schema({
     titulo: { type: String, required: true },
     descricao: String
 });
 
-const HomeModel = mongoose.model('Home', HomeSchema);
+const modelHome = mongoose.model('Home', schemaHome);
 
-module.exports = HomeModel;
+module.exports = modelHome;
