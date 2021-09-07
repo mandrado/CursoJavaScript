@@ -1,35 +1,24 @@
 
-/**
- * 137. Express Middlewares
- * 
- * Usando middlewares 
- * 
- * O Express é uma estrutura web de roteamento e middlewares que tem uma funcionalidade mínima 
- * por si só: Um aplicativo do Express é essencialmente uma série de chamadas de funções de middleware.
- * 
- * Funções de Middleware são funções que tem acesso ao objeto de solicitação (req), o objeto de resposta (res), 
- * e a próxima função de middleware no ciclo solicitação-resposta do aplicativo. A próxima função middleware é 
- * comumente denotada por uma variável chamada next.
- * 
- * Funções de middleware podem executar as seguintes tarefas:
- * 
- * Executar qualquer código.
- * Fazer mudanças nos objetos de solicitação e resposta.
- * Encerrar o ciclo de solicitação-resposta.
- * Chamar a próxima função de middleware na pilha.
- * 
- */
 const express = require('express');
 const route = express.Router();
 const homeController = require('./src/controllers/homeController');
-const contaController = require('./src/controllers/contatoController');
+const contatoController = require('./src/controllers/contatoController');
 
-// Rotas da home
+/**
+ * Rotas
+ * 
+ * A rota vai decidir qual controler vai ser utilizado
+ * quem irá controlar a rota e qual é a view a ser utilizada
+ * 
+ */
+
+/* rota para obter a página inicial do arquivo homeControler*/
 route.get('/', homeController.paginaInicial);
+/* rota para enviar algo para ser tratado pelo trataPost do arquivo homeControler*/
 route.post('/', homeController.trataPost);
 
-// Rotas do Contato
-route.get('/contato', contaController.paginaContato);
+// Rota para obter o Contato da pagina contatoController
+route.get('/contato', contatoController.paginaContato);
 
 
 

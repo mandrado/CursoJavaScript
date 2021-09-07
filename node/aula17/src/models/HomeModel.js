@@ -1,3 +1,9 @@
+/**
+ * Tudo que vier do banco de dados será tratado 
+ * dentro do diretório models
+ * 
+ */
+
 const mongoose = require('mongoose');
 
 const HomeSchema = new mongoose.Schema({
