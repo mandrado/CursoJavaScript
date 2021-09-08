@@ -10,17 +10,18 @@ const express = require('express');
 const route = express.Router();
 const controllerHome = require('./src/controllers/controllerHome');
 const controllerLogin = require('./src/controllers/controllerLogin');
-const controllerRegistro = require('./src/controllers/controllerRegistro');
+//const controllerRegistro = require('./src/controllers/controllerRegistro');
 
 
 /* rota para obter a página inicial (index) do arquivo controllerHome */
 route.get('/', controllerHome.index);
 
 /* Rotas para login */
-route.get('/login', controllerLogin.index);
+route.get('/login/index', controllerLogin.index);
+route.post('/login/register', controllerLogin.register);
 
 /* Rota para registro */
-route.get('/registro', controllerRegistro.index);
+//route.get('/registro', controllerRegistro.index);
 
 // esportar as rotas criadas
 module.exports = route;
