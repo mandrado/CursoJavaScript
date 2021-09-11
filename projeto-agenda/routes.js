@@ -19,6 +19,8 @@ route.get('/', controllerHome.index);
 /* Rotas para login */
 route.get('/login/index', controllerLogin.index);
 route.post('/login/register', controllerLogin.register);
+route.post('/login/login', controllerLogin.login);
+route.get('/login/logout', controllerLogin.logout);
 
 /* Rota para registro */
 //route.get('/registro', controllerRegistro.index);

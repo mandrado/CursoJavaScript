@@ -35,6 +35,25 @@ class Login {
         this.user = null;
     }
 
+    async login() {
+        this.valida();
+        if (this.erros.length > 0) return;
+        this.user = await modelLogin.findOne({ email: this.body.email });
+        console.log(this.user);
+
+        if (!this.user) {
+            this.erros.push('Usuário não cadastrado.');
+            return;
+        }
+
+        if (!bcryptjs.compareSync(this.body.password, this.user.password)) {
+            this.erros.push('Senha inválida');
+            console.log(`${this.body.password} <> ${this.user.password}`);
+            this.user = null;
+            return;
+        }
+    }
+
     async register() {
         this.valida();
         // checagem se houve errro nos dados do formularío
@@ -44,27 +63,25 @@ class Login {
         // chegar se houve erro ao verificar se o usuário já existe.
         if (this.erros.length > 0) return;
 
-        try {
-            /**
-             * O salt é uma das vantagens do BCrypt, pois acrescenta aleatoriamente 
-             * sequências de caracteres a senha, projetando resultados criptográficos 
-             * complexos e aumentando a segurança contra ataques de força bruta, como 
-             * o rainbow tables, ou seja, um hash sempre será diferente, mesmo que 
-             * a senha seja igual.
-             */
-            const salt = bcryptjs.genSaltSync();
-            this.body.password = bcryptjs.hashSync(this.body.password, salt);
-            this.user = await modelLogin.create(this.body)
-        } catch (e) {
-            console.log(e);
-        }
+        /**
+         * O salt é uma das vantagens do BCrypt, pois acrescenta aleatoriamente 
+         * sequências de caracteres a senha, projetando resultados criptográficos 
+         * complexos e aumentando a segurança contra ataques de força bruta, como 
+         * o rainbow tables, ou seja, um hash sempre será diferente, mesmo que 
+         * a senha seja igual.
+         */
+        const salt = bcryptjs.genSaltSync();
+        this.body.password = bcryptjs.hashSync(this.body.password, salt);
+
+        this.user = await modelLogin.create(this.body)
+
     }
 
     async userExiste() {
         // buscar na base de dados:
-        const user = await modelLogin.findOne({ email: this.body.email });
+        this.user = await modelLogin.findOne({ email: this.body.email });
         /// se email já estiver cadastrado: 
-        if (user) this.erros.push('Usuário já cadastrado.');
+        if (this.user) this.erros.push('Usuário já cadastrado.');
 
     }
 
