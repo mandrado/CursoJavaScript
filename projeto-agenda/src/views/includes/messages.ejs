@@ -11,12 +11,11 @@
  
 <% } %>
 
-
 <% if (success.length > 0) { %>
     <div class="row">
         <div class="col my-3">
             <div class="alert alert-success">
-                <% success.forEach(erro => { %>
+                <% success.forEach(success => { %>
                  <%= success %> <br>
                 <% }) %>
             </div>
@@ -24,9 +23,3 @@
     </div>
  
 <% } %>
-
-
-
-
-
-success
