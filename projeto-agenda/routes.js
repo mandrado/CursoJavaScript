@@ -10,6 +10,8 @@ const express = require('express');
 const route = express.Router();
 const controllerHome = require('./src/controllers/controllerHome');
 const controllerLogin = require('./src/controllers/controllerLogin');
+const controllerContato = require('./src/controllers/controllerContato');
+const {loginRequired} = require('./src/middlewares/middleware');
 //const controllerRegistro = require('./src/controllers/controllerRegistro');
 
 
@@ -21,6 +23,11 @@ route.get('/login/index', controllerLogin.index);
 route.post('/login/register', controllerLogin.register);
 route.post('/login/login', controllerLogin.login);
 route.get('/login/logout', controllerLogin.logout);
+
+/* Rota para contato */
+route.get('/contato/index', loginRequired, controllerContato.index);
+route.post('/contato/cadastro', loginRequired, controllerContato.cadastro);
+route.get('/contato/index/:id', loginRequired, controllerContato.editIndex);
 
 /* Rota para registro */
 //route.get('/registro', controllerRegistro.index);
