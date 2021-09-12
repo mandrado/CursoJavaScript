@@ -29,6 +29,7 @@ route.get('/contato/index', loginRequired, controllerContato.index);
 route.post('/contato/cadastro', loginRequired, controllerContato.cadastro);
 route.get('/contato/index/:id', loginRequired, controllerContato.editIndex);
 route.post('/contato/edit/:id', loginRequired, controllerContato.edit);
+route.get('/contato/delete/:id', loginRequired, controllerContato.delete);
 
 /* Rota para registro */
 //route.get('/registro', controllerRegistro.index);
