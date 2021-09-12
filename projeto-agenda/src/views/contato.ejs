@@ -12,8 +12,11 @@
             <p class="text-center lead">Crie ou edite seus contatos abaixo.</p>
             
             <%- include('includes/messages'); %> 
-
-            <form action="/contato/cadastro" method="post">
+            <% if (contato._id) { %>
+                <form action="/contato/edit/<%= contato._id %> " method="post">
+            <% } else { %>
+                <form action="/contato/cadastro" method="post">
+            <% } %>
             <input type="hidden" name="_csrf" value=<%= csrfToken %>>
             <div class="form-group">
                 <label for="nome">Nome</label>
@@ -35,17 +38,6 @@
             
             </form>
 
-
-            <div class="responsive-table">
-                <table class="table my-3">
-                    <tr>
-                        <td>Mandrado</td>
-                        <td>Santos</td>
-                        <td>email@email.com</td>
-                        <td>1199999999</td>
-                    </tr>
-                </table>
-            </div>
                 
         </div>
         
