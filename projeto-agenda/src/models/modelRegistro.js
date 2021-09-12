@@ -8,10 +8,11 @@
 
  const mongoose = require('mongoose');
  const validator = require('validator');
+ const bcryptjs = require('bcryptjs');
  
  const schemaLogin = new mongoose.Schema({
      email: {type: String, required: true},
-     senha: {type: String, required: true}
+     password: {type: String, required: true}
  });
  
  const modelRegistro = mongoose.model('Registro', schemaLogin);
@@ -23,9 +24,24 @@
          this.user = null;
      }
  
-     registrar() {
+     async registrar() {
          this.valida();
          if(this.erros.length > 0) return;
+        
+         await this.userExiste();
+
+         if(this.erros.length > 0) return;
+
+         const salt = bcryptjs.genSaltSync();
+         this.body.password = bcryptjs.hashSync(this.body.password, salt);
+
+         this.user = await modelRegistro.create(this.body);
+
+     }
+
+     async userExiste(){
+         this.user = await modelRegistro.findOne({email: this.body.email});
+         if (this.user) this.erros.push('Usuário já cadastrado;')
      }
  
      valida() {

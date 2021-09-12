@@ -12,7 +12,7 @@ const controllerHome = require('./src/controllers/controllerHome');
 const controllerLogin = require('./src/controllers/controllerLogin');
 const controllerContato = require('./src/controllers/controllerContato');
 const {loginRequired} = require('./src/middlewares/middleware');
-//const controllerRegistro = require('./src/controllers/controllerRegistro');
+const controllerRegistro = require('./src/controllers/controllerRegistro');
 
 
 /* rota para obter a página inicial (index) do arquivo controllerHome */
@@ -32,7 +32,7 @@ route.post('/contato/edit/:id', loginRequired, controllerContato.edit);
 route.get('/contato/delete/:id', loginRequired, controllerContato.delete);
 
 /* Rota para registro */
-//route.get('/registro', controllerRegistro.index);
+route.get('/registro', controllerRegistro.index);
 
 // esportar as rotas criadas
 module.exports = route;

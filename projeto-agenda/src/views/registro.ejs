@@ -1,36 +1,39 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
 
-    <div class="container"></div>
+  <div class="container"></div>
 
-    <div class="row">
-        
-        <div class="col-lg-2"></div>
+  <div class="row">
 
-        <div class="col-lg-8 my-3">
-            <h1 class="text-center">REGISTRAR</h1>
-            <p class="text-center lead">Se você ainda não tem uma conta, preencha o formulário abaixo.</p>
-            <form action="/registro" method="POST">
-                <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+      <div class="col-lg-2"></div>
+
+      <div class="col-lg-8 my-3">
+        <%- include('includes/messages'); %>
+          <div class="row">
+            <div class="col-lg my-5">
+              <h4 class="text-center">Faça seu cadastro</h4>
+              <p class="text-center lead">Se você ainda não tem uma conta, preencha o formulário abaixo.</p>
+              <form class="form-cadastro" action="/login/register" method="POST">
+                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
                 <div class="form-group">
                   <label for="InputEmail">Endereço de E-mail</label>
-                  <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp" placeholder="Entre com seu e-mail">
-                  <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais ninguém.</small>
+                  <input type="email" class="form-control" id="InputEmail" name="email" aria-describedby="emailHelp"
+                    placeholder="Entre com seu e-mail">
+                  <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais
+                    ninguém.</small>
                 </div>
                 <div class="form-group">
                   <label for="InputPassword">Sua senha</label>
                   <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Senha">
                 </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Verifique-me</label>
-                </div>
                 <button type="submit" class="btn btn-primary">Criar minha conta</button>
-              </form>     
-        </div>
-        
-        <div class="col-lg-2"></div>
+              </form>
+            </div>
+          </div>
+      </div>
 
-    </div>
+    <div class="col-lg-2"></div>
+
+  </div>
 
 <%- include('includes/footer') %>
