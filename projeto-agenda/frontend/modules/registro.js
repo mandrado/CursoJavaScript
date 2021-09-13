@@ -12,6 +12,7 @@ export default class Registro {
     events(){
         if(!this.form) return;
         this.form.addEventListener('submit', e => {
+            e.preventDefault();
             this.validate(e);
         })
     }

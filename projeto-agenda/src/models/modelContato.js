@@ -24,11 +24,22 @@ function Contato(body) {
 }
 
 Contato.prototype.cadastro = async function () {
+    
     this.valida();
     if (this.erros.length > 0) return;
+    
+    await this.userExiste();
+    
+    if (this.erros.length > 0) return;
+    
     this.contato = await modelContato.create(this.body);
 
 };
+
+Contato.prototype.userExiste = async function (){
+    this.user = await modelContato.findOne({email: this.body.email});
+    if(this.user) this.erros.push(`Usuário com o e-mail ${this.body.email} já cadastrado`);
+}
 
 Contato.prototype.valida = function () {
     this.cleanUp();
@@ -48,10 +59,10 @@ Contato.prototype.cleanUp = function () {
     // aqui estamos garantindo que o objeto terá somente
     // os campos e-mail e senha.
     this.body = {
-        nome: this.body.nome,
-        sobrenome: this.body.sobrenome,
-        email: this.body.email,
-        telefone: this.body.telefone
+        nome: this.body.nome.trim(),
+        sobrenome: this.body.sobrenome.trim(),
+        email: this.body.email.trim(),
+        telefone: this.body.telefone.trim()
     }
 };
 
