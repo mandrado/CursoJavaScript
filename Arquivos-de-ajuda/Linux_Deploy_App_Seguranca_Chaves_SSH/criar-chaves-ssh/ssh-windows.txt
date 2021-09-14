@@ -3,3 +3,19 @@ ssh-keygen
 eval $(ssh-agent)
 ssh-add ~/.ssh/id_rsa (privada)
 ssh USUARIO@IPDOSERVER
+
+
+Eu já tinha instalado Git no meu windows
+Já tenho Linux (WSL)
+
+Usei esses comandos via powershell:
+
+ssh-keygen -f .ssh/cursojs -t rsa -b 4096
+cat .\cursojs.pub
+
+Coloquei a chave pública em Metadados > Chaves SSH
+https://console.cloud.google.com/compute/metadata/sshKeys?project=aula-dev
+
+Depois rodei o comando:
+
+ssh -i .\.ssh\cursojs mandr@IPDOSERVER
