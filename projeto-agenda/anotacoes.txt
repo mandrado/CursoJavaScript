@@ -47,3 +47,79 @@ pm2 stop Agenda
  # testando se o servidor está no online:
  curl http://localhost:3000
 
+
+ #166. Instalando e configurando o NGINX (Proxy Reverso)
+
+ sudo apt install nginx
+
+# acessar o servidor nginx:
+ http://dev.mandrado.com
+
+# copiar o arquivo ..\Arquivos-de-ajuda\Linux_Deploy_App_Seguranca_Chaves_SSH\nginx-HTTP.txt
+# para /etc/nginx/sites-available/mandrado.com
+# substituir a url endereço do professor pela sua 
+sudo vim mandrado.com
+:%s/curso.otaviomiranda.com.br/mandrado.com/get
+:wq
+
+# criar o link simbólico para o novo arquivo na pasta sites-enabled:
+cd ../sites-enabled
+sudo ln -s /etc/nginx/sites-available/mandrado.com mandrado.com
+
+# remover o link simbólico do site padrão
+sudo rm default
+
+# reiniciar o servidor web nginx:
+sudo systemctl restart nginx
+
+# acessar a url para conferir o site
+https://dev.mandrado.com
+
+# configurar um servidor seguro https
+
+# reiniciar o servidor:
+sudo service nginx restart #(é o mesmo que sudo systemctl restart nginx)
+
+# gerando DH parametros para 2048 BIT
+sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+
+# Instalar o Certbot
+sudo apt-get install certbot
+
+# parar o servidor nginx
+sudo service nginx stop
+
+# criar o certificado https para nosso dominio
+sudo certbot certonly --standalone -d dev.mandrado.com
+
+# informe seu email para a renovação do e-mail
+
+## recebi o erro:
+Failed authorization procedure. dev.mandrado.com (http-01): urn:ietf:params:acme:error:dns :: DNS problem: 
+SERVFAIL looking up CAA for mandrado.com - the domain's nameservers may be malfunctioning
+
+## após ir no site https://access.enom.com/domainmain.aspx
+# Remover as configurações de "DNS Settings" que apontavam para o google (ns-cloud-x?.googledomains.com), voltando para as
+# configurações padrão e tentar novamente, funcionou.
+# também utilizei um terminal diferente do terminal do vscode.
+
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/dev.mandrado.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/dev.mandrado.com/privkey.pem
+   Your cert will expire on 2021-12-16. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+
+# iniciar o servidor nginx
+sudo service nginx start
+
+# para renovar o certificado é só rodar 
+sudo certbot renew
+
+
+
+
+
+
