@@ -119,6 +119,25 @@ sudo service nginx start
 sudo certbot renew
 
 
+# 167. Editando o site
+git add .
+git commit -m "Editando o site"
+git push
+
+# atualizando os arquivos do site:
+ssh -i ..\..\..\.ssh\cursojs  <user>@<dominio.com> "git -C /home/<user>/agenda/projeto-agenda pull"
+
+# desligando a maquina remotamente
+ssh -i .\.ssh\cursojs <user>@<dominio.com> 'sudo shutdown -h now'
+
+# OU
+
+gcloud compute instances stop cursojs
+
+# iniciando a maquina remotamente:
+
+gcloud compute instances start cursojs
+
 
 
 
