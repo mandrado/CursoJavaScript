@@ -1,0 +1,49 @@
+164. Configurando o Git e enviando os arquivos para o servidor
+
+# instalando o git mais recente.
+
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+
+# Criar o diretório agenda
+mkdir agenda
+
+# clonar somente o diretório do projeto agenda
+git clone -n https://github.com/mandrado/CursoJavaScript.git .
+git checkout HEAD projeto-agenda
+
+# baixar atualizações do projeto-agenda
+ git pull
+
+
+# 165. Instalando o Node e o Pm2 no servidor
+sudo apt install curl -y
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# inicializando o projeto
+npm i
+
+# instalando pm2 globalmente
+sudo npm i -g pm2
+
+# iniciando o pm2
+
+pm2 start /home/mandr/agenda/projeto-agenda/server.js --name Agenda
+
+# ver as informações do servidor
+pm2 list
+
+# reiniciar o servidor
+pm2 start Agenda
+
+# parar a agenda:
+pm2 stop Agenda
+ 
+ # para que o servidor reinicie quando for ligado:
+ pm2 startup
+
+ # testando se o servidor está no online:
+ curl http://localhost:3000
+
