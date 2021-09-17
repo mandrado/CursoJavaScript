@@ -1,0 +1,19 @@
+164. Configurando o Git e enviando os arquivos para o servidor
+
+# instalando o git mais recente.
+
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+
+# Criar o diretório agenda
+mkdir agenda
+
+# clonar somente o diretório do projeto agenda
+git clone -n https://github.com/mandrado/CursoJavaScript.git .
+git checkout HEAD projeto-agenda
+
+# baixar atualizações do projeto-agenda
+ git pull
+
+
