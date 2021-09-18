@@ -49,3 +49,22 @@ npm i nodemon sucrase --save-dev
 # 173. Estruturando o projeto
 npm i express
 
+# 174. Configurando e testando o Sequelize
+npm i dotenv
+npm i sequelize mariadb
+npm i -D sequelize-cli (instalando como dependência de desenvolvimento)
+
+# iniciou o servidor no Google Cloud Plataform
+gcloud compute instances start cursojs
+
+# configurou o Sequelize
+# criou o schema escola do banco de dados MariaDB
+# criou o arquivo que prepara os campos da tabela alunos
+npx Sequelize migration:create --name=alunos
+
+# criou os campos data tabela no arquivo criado pelo sequelize
+# executa novamente o sequelize para em fim executar a migração dos
+# os campos para o banco de dados
+npx sequelize db:migrate
+
+

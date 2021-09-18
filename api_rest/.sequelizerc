@@ -1,0 +1,10 @@
+const { resolve } = require('path');
+module.exports = {
+  //configurar o caminho das coisas
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'models'),
+  // as pastas migrations e seeds são criadas pelo sequelize
+  // não precisamos criar elas, somente apontar.
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'),
+};

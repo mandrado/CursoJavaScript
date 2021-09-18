@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /**
  * 170. Eslint
  * Instalação do Eslint e
@@ -5,10 +6,18 @@
  *
  * 172. Nodemon e Sucrase
  * 173. Estruturando o projeto
+ * 174. Configurando e testando o Sequelize
+ * npm i dotenv
  */
+import dotenv from 'dotenv';
+// eslint-disable-next-line import/first
+dotenv.config();
 
 import express from 'express';
 import homeRoute from './src/routes/homeRoute';
+
+// importar as configurações do banco de dados
+import './src/database';
 
 class App {
   constructor() {
