@@ -45,3 +45,7 @@ None of these
 # Nodemon ->
 # Sucrase -> permite utilizar import/export dos modulos do JavaScript ES6
 npm i nodemon sucrase --save-dev
+
+# 173. Estruturando o projeto
+npm i express
+
