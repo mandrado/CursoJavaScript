@@ -5,6 +5,10 @@ const router = new Router();
 
 // criando a rota para user:
 router.post('/', userController.store);
+router.get('/', userController.index);
+router.get('/:id', userController.show);
+router.put('/:id', userController.update);
+router.delete('/:id', userController.delete);
 
 export default router;
 

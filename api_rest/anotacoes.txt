@@ -67,7 +67,7 @@ npx Sequelize migration:create --name=alunos
 # os campos para o banco de dados
 npx sequelize db:migrate
 
-# deslitar o servidor no Google Cloud Plataform
+# DESLIGAR o servidor no Google Cloud Plataform
 gcloud compute instances stop cursojs
 
 # 175. Criando usuários
@@ -86,3 +86,14 @@ npx sequelize db:migrate:undo
 # criar as validações dos campos no arquivo models/User
 # instala o bcryptjs para criar o hash das senhas
 npm i bcryptjs
+
+# DESLIGAR o servidor no Google Cloud Plataform
+gcloud compute instances stop cursojs
+
+# 176. CRUD de usuários
+# LIGAR o servidor no Google Cloud Plataform
+gcloud compute instances start cursojs
+npm run dev
+
+# DESLIGAR o servidor no Google Cloud Plataform
+gcloud compute instances stop cursojs
