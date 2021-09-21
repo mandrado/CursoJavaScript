@@ -59,4 +59,10 @@ export default class User extends Model {
     });
     return this;
   }
+
+  // 177. Gerando o JWT do usuário
+  // verificando se a senha do usuário é valida
+  passwordIsValid(password) {
+    return bcryptjs.compare(password, this.password_hash);
+  }
 }
