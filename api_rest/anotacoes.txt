@@ -159,6 +159,10 @@ npx sequelize migration:create --name=mudar-email-aluno-unique
 # Editar uma tabela para mudar o tipo de um campo para ser único.
 npx sequelize db:migrate
 
+# 182. CRUD de alunos
+# criando a indicação dos campos e validação no arquivo models\Aluno
+# criando as rotas no arquivo routes\alunoRoute
+# criando o acesso aos dados em controller\alunoController
 
 
 
