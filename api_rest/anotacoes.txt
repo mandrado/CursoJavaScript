@@ -150,6 +150,15 @@ npm run dev
 # em outro terminal, pedir para o sequelize executar o arquivo que cria usuários
 npx sequelize db:seed:all
 
+# 181. Rotas de alunos
+# Criar o cadastro de alunos (CRUD)
+
+# os dados dos alunos estão sendo repetidos, precisamos validar o e-mail para ser único
+npx sequelize migration:create --name=mudar-email-aluno-unique
+
+# Editar uma tabela para mudar o tipo de um campo para ser único.
+npx sequelize db:migrate
+
 
 
 
