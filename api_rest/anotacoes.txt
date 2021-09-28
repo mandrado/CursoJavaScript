@@ -123,3 +123,17 @@ gcloud compute instances stop cursojs --zone=us-central1-a
 # LIGAR o servidor no Google Cloud Plataform
 gcloud compute instances start cursojs --zone=us-central1-a
 npm run dev
+
+# 179. Correções de segurança para usuários
+
+# Removendo coisas que não precisam existir em um sistema real
+# precisamos de uma página para criar usuários com acesso a usuários não logados:
+# precisamos de uma página para atualisar os dados do usuário
+# usuário não pode deletar outros usuários, apenas seus dados
+# chegar na base se o id e email ainda correspondem ao mesmo usuário
+
+# DESLIGAR o servidor no Google Cloud Plataform
+gcloud compute instances stop cursojs --zone=us-central1-a
+
+
+

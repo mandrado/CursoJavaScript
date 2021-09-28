@@ -5,11 +5,18 @@ import loginRequired from '../middlewares/loginRequired';
 const router = new Router();
 
 // criando a rota para user:
+// -- esses dois abaixo não precisam existir em um sistema real
+router.get('/', loginRequired, userController.index); // Lista todos os usuários
+router.get('/:id', userController.show); // Lista usuário
+
+// precisamos de uma página para criar usuários com acesso a usuários não logados:
 router.post('/', userController.store);
-router.get('/', loginRequired, userController.index);
-router.get('/:id', userController.show);
-router.put('/:id', userController.update);
-router.delete('/:id', userController.delete);
+// precisamos de uma páigna para atualisar seus dados, jamais de outros
+// usuários, com login requerido
+router.put('/', loginRequired, userController.update);
+// usuário não pode deletar outros usuários
+// apenas seus dados, com login requerido.
+router.delete('/', loginRequired, userController.delete);
 
 export default router;
 
