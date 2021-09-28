@@ -135,5 +135,27 @@ npm run dev
 # DESLIGAR o servidor no Google Cloud Plataform
 gcloud compute instances stop cursojs --zone=us-central1-a
 
+# 180. Criando seeds
+# as vezes precisamos gerar dados aleatóriamente, como por exemplo
+# criar vários alunos para realizar testes
+
+# criar vários usuários
+npx sequelize seed:generate --name criar-usuarios
+
+# editar o arquivo gerado pelo sequelize.
+
+# rodar o servidor:
+npm run dev
+
+# em outro terminal, pedir para o sequelize executar o arquivo que cria usuários
+npx sequelize db:seed:all
+
+
+
+
+
+
+
+
 
 
