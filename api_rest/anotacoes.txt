@@ -113,3 +113,13 @@ npm run dev
 
 # DESLIGAR o servidor no Google Cloud Plataform
 gcloud compute instances stop cursojs --zone=us-central1-a
+
+# 178. Middleware de verificação de login do JWT
+
+# Duas formas de utilizar o Token
+# 1ª Auth -> escolha Bearer Token e em TOKEN coloque o token gerando
+# 2º Header -> no primeiro campo informe "authorization" em value coloque Baerer, de um espaço e coloque o token.
+
+# LIGAR o servidor no Google Cloud Plataform
+gcloud compute instances start cursojs --zone=us-central1-a
+npm run dev
