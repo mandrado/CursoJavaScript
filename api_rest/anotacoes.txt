@@ -164,6 +164,26 @@ npx sequelize db:migrate
 # criando as rotas no arquivo routes\alunoRoute
 # criando o acesso aos dados em controller\alunoController
 
+# 182. Restringindo acesso ao cadastro. habilitando Bearer Token
+
+# 183. Upload de arquivos
+npm i multer
+# Criar as rotas para receber arquivos (imagens)
+# Criar o controller, atualizar o app.js
+# Configurar o insommia: criar uma pasta, uma
+# requisição tipo post para receber um JSON Multipart
+# Criar uma chave com o nome "imagem" e o valor do tipo "File"
+# Criar o arquivo de configuração multer.js
+
+npm run dev
+
+# fazer upload do arquivo.
+
+
+
+
+
+
 
 
 

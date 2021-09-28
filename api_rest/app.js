@@ -18,6 +18,7 @@ import homeRoute from './src/routes/homeRoute';
 import userRoute from './src/routes/userRoute';
 import tokenRoute from './src/routes/tokenRoute';
 import alunoRoute from './src/routes/alunoRoute';
+import imagensRoute from './src/routes/imagensRoute';
 
 // importar as configurações do banco de dados
 import './src/database';
@@ -42,7 +43,9 @@ class App {
     // rota para o token (jwt)
     this.app.use('/tokens/', tokenRoute);
     // rota para alunos
-    this.app.use('/alunos', alunoRoute);
+    this.app.use('/alunos/', alunoRoute);
+    // rota para imagens
+    this.app.use('/imagens/', imagensRoute);
   }
 }
 
