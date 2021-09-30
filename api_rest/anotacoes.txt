@@ -179,7 +179,13 @@ npm run dev
 
 # fazer upload do arquivo.
 
+# 184. Tratando os arquivos enviados
 
+# LIGAR o servidor no Google Cloud Plataform
+gcloud compute instances start cursojs --zone=us-central1-a
+npm run dev
+
+# recebendo apenas arquivos PNG ou JPEG
 
 
 
