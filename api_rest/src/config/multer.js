@@ -17,7 +17,8 @@ export default {
     },
     filename: (req, file, cb) => {
       // tentei obter o id do usuário + data do upload + numero aleatório + extensão do arquivo.
-      cb(null, `${req.UserId}_${Date.now()}_${aleatorio()}${extname(file.originalname)}`);
+      // mas ainda não consegui.
+      cb(null, `${Date.now()}_${aleatorio()}${extname(file.originalname)}`);
     },
   }),
 };

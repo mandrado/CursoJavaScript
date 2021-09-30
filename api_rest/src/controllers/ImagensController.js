@@ -1,19 +1,26 @@
 import multer from 'multer';
 import multerConfig from '../config/multer';
+import Imagem from '../models/Imagem';
 
 const upload = multer(multerConfig).single('imagem');
 
 class ImagensController {
-  async store(req, res) {
+  store(req, res) {
     // exibir dados do arquivo no retorno do upload
     // res.json(req.file);
-    return upload(req, res, (err) => {
+    return upload(req, res, async (err) => {
       if (err) {
         return res.status(400).json({
           errors: [err.code],
         });
       }
-      return res.json(req.file);
+      const { originalname, filename } = req.file;
+      // eslint-disable-next-line camelcase
+      const { id_aluno } = req.body;
+
+      const imagem = await Imagem.create({ originalname, filename, id_aluno });
+
+      return res.json(imagem);
     });
   }
 }
