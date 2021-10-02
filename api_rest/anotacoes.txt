@@ -192,11 +192,15 @@ npm run dev
 # requerer login para salvar imagens.
 # Criar campo no banco de dados para salvar imagens.
 npx sequelize migration:create --name=criar-tabela-imagens
+
 # edita o arquivo para criar a nova tabela com uma chave estrangeira
 # apontando para a tabela alunos.
 npx sequelize db:migrate
 
 # salvando imagens na tabela.
+
+186. Listando alunos com suas fotos
+
 
 
 

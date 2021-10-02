@@ -14,13 +14,19 @@ class ImagensController {
           errors: [err.code],
         });
       }
-      const { originalname, filename } = req.file;
-      // eslint-disable-next-line camelcase
-      const { id_aluno } = req.body;
+      try {
+        const { originalname, filename } = req.file;
+        // eslint-disable-next-line camelcase
+        const { id_aluno } = req.body;
 
-      const imagem = await Imagem.create({ originalname, filename, id_aluno });
+        const imagem = await Imagem.create({ originalname, filename, id_aluno });
 
-      return res.json(imagem);
+        return res.json(imagem);
+      } catch (e) {
+        return res.status(400).json({
+          errors: ['Ocorreu um erro. Provavelmente o aluno não existe'],
+        });
+      }
     });
   }
 }
