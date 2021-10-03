@@ -31,7 +31,7 @@ export default class Imagem extends Model {
       url: {
         type: Sequelize.VIRTUAL,
         get() {
-          return `${appConfig.url}/imagens/${this.getDataValue('filename')}`;
+          return `${appConfig.urlprod}/imagens/${this.getDataValue('filename')}`;
         },
       },
     }, {

@@ -1,4 +1,5 @@
 export default
 {
-  url: 'http://localhost:3001',
+  urldev: 'http://localhost:3001',
+  urlprod: process.env.APP_URL,
 };

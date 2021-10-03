@@ -15,14 +15,14 @@ dotenv.config();
 
 import express from 'express';
 import { resolve } from 'path';
-import homeRoute from './src/routes/homeRoute';
-import userRoute from './src/routes/userRoute';
-import tokenRoute from './src/routes/tokenRoute';
-import alunoRoute from './src/routes/alunoRoute';
-import imagensRoute from './src/routes/imagensRoute';
+import homeRoute from './routes/homeRoute';
+import userRoute from './routes/userRoute';
+import tokenRoute from './routes/tokenRoute';
+import alunoRoute from './routes/alunoRoute';
+import imagensRoute from './routes/imagensRoute';
 
 // importar as configurações do banco de dados
-import './src/database';
+import './database';
 
 class App {
   constructor() {

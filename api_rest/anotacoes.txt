@@ -204,6 +204,36 @@ npx sequelize db:migrate
 # 187. Arquivos estáticos
 # Cria URL para a pasta de arquivos das imagens
 
+# 188. Deploy da nossa API
+# certifique-se se o servidor está rodando.
+gcloud compute instances start cursojs --zone=us-central1-a
+
+# criar a build do projeto para enviar ele para a produção
+# editar o arquivo package.json e incluir o scripts
+  "build": "sucrase ./src -d ./dist --transforms imports"
+    "start": "node dist/server.js",
+# transferir as configurações de URL e PORTA para o arquivo
+# .env
+
+npm run build
+npm run start
+
+# atualize seus arquivos com o github.
+
+# Acessar o servidor na Google Cloud
+
+ssh -i ..\..\..\.ssh\cursojs seu.dominio.com
+
+# Criar o diretório api
+mkdir api
+
+# clonar somente o diretório do projeto api-rest
+git clone -n https://github.com/mandrado/CursoJavaScript.git .
+git checkout HEAD api-rest
+
+# baixar atualizações do api-rest
+ git pull
+
 
 
 
