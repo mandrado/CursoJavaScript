@@ -3,6 +3,7 @@
  *
  */
 import Sequelize, { Model } from 'sequelize';
+import appConfig from '../config/appConfig';
 
 export default class Imagem extends Model {
   // sequelize é a conexão com o banco de dados:
@@ -25,6 +26,12 @@ export default class Imagem extends Model {
           notEmpty: {
             msg: 'Erro ao ler o nome do arquivo.',
           },
+        },
+      },
+      url: {
+        type: Sequelize.VIRTUAL,
+        get() {
+          return `${appConfig.url}/imagens/${this.getDataValue('filename')}`;
         },
       },
     }, {

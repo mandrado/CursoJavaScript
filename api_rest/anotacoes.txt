@@ -199,11 +199,10 @@ npx sequelize db:migrate
 
 # salvando imagens na tabela.
 
-186. Listando alunos com suas fotos
+# 186. Listando alunos com suas fotos
 
-
-
-
+# 187. Arquivos estáticos
+# Cria URL para a pasta de arquivos das imagens
 
 
 

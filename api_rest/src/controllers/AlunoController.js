@@ -10,7 +10,7 @@ class AlunoController {
       // exibindo a imagem relacionada ao aluno
       include: {
         model: Imagem,
-        attributes: ['originalname', 'filename'],
+        attributes: ['originalname', 'filename', 'url'],
       },
     });
     res.json(alunos);
@@ -44,7 +44,7 @@ class AlunoController {
         // exibindo a imagem relacionada ao aluno
         include: {
           model: Imagem,
-          attributes: ['originalname', 'filename'],
+          attributes: ['originalname', 'filename', 'url'],
         },
       });
       if (!aluno) {

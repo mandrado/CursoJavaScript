@@ -13,7 +13,7 @@ export default {
   },
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, resolve(__dirname, '..', '..', 'uploads'));
+      cb(null, resolve(__dirname, '..', '..', 'uploads', 'imagens'));
     },
     filename: (req, file, cb) => {
       // tentei obter o id do usuário + data do upload + numero aleatório + extensão do arquivo.
