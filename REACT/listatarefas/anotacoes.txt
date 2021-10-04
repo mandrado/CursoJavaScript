@@ -1,0 +1,10 @@
+# 189. Criando um app com o React
+# crie o diretório do projeto
+mkdir REACT
+cd .\REACT\
+mkdir ListaTarefas
+cd .\ListaTarefas\
+# execute o comando que irá criar o projeto inicial com tudo que precisamos.
+# 
+# prepare-se pois demora um tempo para baixar todo o projeto.
+npx create-react-app .
