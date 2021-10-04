@@ -335,6 +335,22 @@ sudo systemctl restart nginx
 
 npm run build
 
+# sua pasta de distribuição não sobe junto com seu git commit.
+# então terá que fazer build no servidor novamente.
+
+git add
+git commit -m "188. Deploy da API corrigindo o endereço de upload"
+git push
+
+# entre no servidor de produção e rode os comandos
+cd api/api_rest
+git pull
+npm run build
+
+pm2 restart api
+
+
+
 
 
 
