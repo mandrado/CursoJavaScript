@@ -52,5 +52,6 @@ npm i react-icons
 # 195. Estilizando as tarefas
 # 196. Adicionando tarefas
 # 197. Apagando tarefas
+# 198. Editando tarefas
 
 
