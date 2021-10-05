@@ -5,9 +5,35 @@ cd .\REACT\
 mkdir ListaTarefas
 cd .\ListaTarefas\
 # execute o comando que irá criar o projeto inicial com tudo que precisamos.
-# 
+#
 # prepare-se pois demora um tempo para baixar todo o projeto.
 npx create-react-app .
 
 # 190. Configurações iniciais
 # Removendo arquivos não necessários.
+
+# 191. Eslint e Editorconfig
+# padronizando o projeto.
+# com botão direito clique em "Generate .editorconfig"
+# instale o Eslint como dependência de desenvolvimento.
+npm i eslint babel-eslint -D
+# configure o eslint
+npx eslint --init
+> To check syntax, find problems, and enforce code style
+> JavaScript modules (import/export)
+> React
+? Does your project use TypeScript? » No
+? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+√ Browser
+? How would you like to define a style for your project? ...
+> Use a popular style guide
+? Which style guide do you want to follow? ...
+> Airbnb: https://github.com/airbnb/javascript
+? What format do you want your config file to be in? ...
+> JavaScript
+? Would you like to install them now with npm? » Yes
+
+# no arquivo gerado eslintrc.js acrescente
+parser: 'babel-eslint', antes da linha ParseOptions
+
+

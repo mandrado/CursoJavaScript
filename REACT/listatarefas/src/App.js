@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './App.css';
 
 export default function App() {
@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Hello World!
+          Hello World!;
         </p>
       </header>
     </div>
