@@ -1,14 +1,23 @@
+/* eslint-disable import/no-duplicates */
 import React, { Component } from 'react';
 import './Main.css';
 
 // Form
 import { FaPlus } from 'react-icons/fa';
 
+// Tarefas
+import { FaEdit, FaWindowClose } from 'react-icons/fa';
+
 export default class Main extends Component {
   // criar o estado sem um contrutor:
   // eslint-disable-next-line react/state-in-constructor
   state = {
     novaTarefa: '',
+    tarefas: [
+      'Fazer café',
+      'Beber água',
+      'Estudar',
+    ],
   }
 
   // transformar o método em uma arrow function:
@@ -23,7 +32,7 @@ export default class Main extends Component {
   // render para rederizar algo na tela
 
   render() {
-    const { novaTarefa } = this.state;
+    const { novaTarefa, tarefas } = this.state;
     return (
       <div className="main">
         <h1>
@@ -39,6 +48,17 @@ export default class Main extends Component {
             <FaPlus />
           </button>
         </form>
+        <ul className="tarefas">
+          {tarefas.map((tarefa) => (
+            <li key={tarefa}>
+              {tarefa}
+              <div>
+                <FaEdit className="edit" />
+                <FaWindowClose className="delete" />
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

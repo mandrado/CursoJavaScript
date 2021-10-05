@@ -49,3 +49,6 @@ parser: 'babel-eslint', antes da linha ParseOptions
 npm i react-icons
 # estilizando o form com css
 
+# 195. Estilizando as tarefas
+
+
