@@ -8,3 +8,6 @@ cd .\ListaTarefas\
 # 
 # prepare-se pois demora um tempo para baixar todo o projeto.
 npx create-react-app .
+
+# 190. Configurações iniciais
+# Removendo arquivos não necessários.
