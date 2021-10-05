@@ -36,4 +36,9 @@ npx eslint --init
 # no arquivo gerado eslintrc.js acrescente
 parser: 'babel-eslint', antes da linha ParseOptions
 
+# 193. Componentes
+# podemos retonar mais de um <> elemento com elemento vazio </>
+# criar nosso componente
+# salvar a 1ª foram de fazer.
+
 
