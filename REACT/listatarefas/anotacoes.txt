@@ -40,5 +40,7 @@ parser: 'babel-eslint', antes da linha ParseOptions
 # podemos retonar mais de um <> elemento com elemento vazio </>
 # criar nosso componente
 # salvar a 1ª foram de fazer.
+# salvar a 2ª forma de fazer.
+# estilizar a página com css
 
 
