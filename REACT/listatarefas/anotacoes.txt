@@ -57,4 +57,6 @@ npm i react-icons
 # 197. Apagando tarefas
 # 198. Editando tarefas
 # 199. Salvando no localStorage
-
+# 200. Separando os componentes
+# instalar prop-types para validação das propriedades
+npm i prop-types
