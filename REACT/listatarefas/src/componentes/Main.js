@@ -17,6 +17,27 @@ export default class Main extends Component {
     index: -1,
   }
 
+  componentDidMount() {
+    // é executando quando o componente é montado
+    const tarefas = JSON.parse(localStorage.getItem('tarefas'));
+
+    // chegar se existem tarefas?
+    if (!tarefas) return;
+    // se existir tarefas setar o estado
+    this.setState({ tarefas });
+  }
+
+  componentDidUpdate(prevPropos, prevState) {
+    const { tarefas } = this.state;
+
+    // retonar apenas quando a lista de tarefas mudar:
+    if (tarefas === prevState.tarefas) return;
+
+    // console.log('As tarefas mudaram', tarefas);
+    // Salvando as tarefaqs no storage local
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
+  }
+
   handleSubmit= (event) => {
     event.preventDefault();
     // pegar as tarefas adicionar na lista

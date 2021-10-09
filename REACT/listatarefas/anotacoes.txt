@@ -17,8 +17,10 @@ npx create-react-app .
 # com botão direito clique em "Generate .editorconfig"
 # instale o Eslint como dependência de desenvolvimento.
 npm i eslint babel-eslint -D
+
 # configure o eslint
 npx eslint --init
+
 > To check syntax, find problems, and enforce code style
 > JavaScript modules (import/export)
 > React
@@ -47,11 +49,12 @@ parser: 'babel-eslint', antes da linha ParseOptions
 # 194. Estilizando o form
 # utilizando bibliotecas de icones do react
 npm i react-icons
+
 # estilizando o form com css
 
 # 195. Estilizando as tarefas
 # 196. Adicionando tarefas
 # 197. Apagando tarefas
 # 198. Editando tarefas
-
+# 199. Salvando no localStorage
 
