@@ -96,6 +96,8 @@ ext install vscode-styled-components
 # no terminal instale
 npm i styled-components
 
+# 205. Configurando as cores
+
 
 
 
