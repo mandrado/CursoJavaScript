@@ -1,0 +1,88 @@
+# 202. Eslint, prettier e editorconfig
+# criando um projeto react-base para todos os demais projetos
+npx create-react-app .
+
+# prettier deixa seu código mais bonito, mais bem formatado.
+# instalar as dependências como de desenvolvimento.
+npm i eslint babel-eslint prettier eslint-config-prettier eslint-plugin-prettier -D
+
+# configurar o eslint com as seguintes opções:
+npx eslint --init
+
+> To check syntax, find problems, and enforce code style
+> JavaScript modules (import/export)
+> React
+? Does your project use TypeScript? (y/N) N
+? Where does your code run? Browser
+> Use a popular style guide
+> Airbnb: https://github.com/arbnb/javascript
+> JavaScript
+? Would you like to install them now with npm? (Y/n) Y
+
+# configurar o eslintrc.js
+# acrescentar as extenções
+extends: [
+	'prettier',
+	'prettier/react'
+],
+# acima do parserOptions:
+	parser: 'babel-eslint',
+
+# em plugins colocar
+plugins:[
+	'react',
+	'prettier',
+	'react-hooks'
+],
+
+# em rules: {
+	'prettier/prettier':'error',
+	'react/jsx-filename-extension': 0,
+	'import/prefer-default-export': 0,
+	'react-hooks/rules-of-hooks': 'error',
+	'react-hooks/exhaustive-deps': 'warn'
+},
+
+# criar o arquivo .prettierrc (arquivo json)
+{
+	"singleQuote":true,
+	"trailingComma": "es5"
+}
+
+# configurar o editorconfig
+# precisa ter a extensão EditorConfig for VS Code
+# gere o arquivo com botão direito do mouse na estrutura de pasta do vscode 
+# e clique em "Generate.editorconfig"
+# acresente as configurações
+	end_of_line = lf
+
+# altere para true
+	trim_trailing_whitespace = true
+	insert_final_newline = true
+
+# as demais configurações devem ser:
+	root = true
+	[*]
+	indent_style = space
+	indent_size = 2
+	charset = utf-8
+
+# fechar o VS Code e abrir novamente.
+
+# configurar Settings do VS Code (engrenagem na parte inferior esquerda)
+# clicar no ícone para abrir o arquivo das configurações 
+# acrescentar ao arquivo (se não existir):
+// ESLINT	
+"editor.codeActionsOnSave":{
+	"source.fixAll.eslint": true
+}
+
+
+
+
+
+
+
+
+
+
