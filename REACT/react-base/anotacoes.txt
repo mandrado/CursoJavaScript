@@ -98,6 +98,10 @@ npm i styled-components
 
 # 205. Configurando as cores
 
+# 206. Menu da aplicação
+# instalando o pacote de icones
+npm i react-icons
+
 
 
 
