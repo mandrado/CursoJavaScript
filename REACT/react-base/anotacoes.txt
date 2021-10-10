@@ -81,6 +81,23 @@ plugins:[
 # removendo diretórios e arquivos desnecessários no momento.
 # ativando o React Developer Tools extenção do google chrome
 
+# 204. Styled-Components
+# Components estilizados com super poderes
+# criar uma pasta para as páginas (login, registro, etc)
+# criar uma pasta para os componentes que serão compartilhados
+# globalmente no projeto (header, pesquisa, etc)
+
+# criando a página de login
+
+# instale extensão para style-Components
+# dentro do VSCode, pressione Ctrl+P, e entre com:
+ext install vscode-styled-components
+
+# no terminal instale
+npm i styled-components
+
+
+
 
 
 
