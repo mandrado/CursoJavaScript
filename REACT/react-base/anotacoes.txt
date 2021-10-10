@@ -51,7 +51,7 @@ plugins:[
 
 # configurar o editorconfig
 # precisa ter a extensão EditorConfig for VS Code
-# gere o arquivo com botão direito do mouse na estrutura de pasta do vscode 
+# gere o arquivo com botão direito do mouse na estrutura de pasta do vscode
 # e clique em "Generate.editorconfig"
 # acresente as configurações
 	end_of_line = lf
@@ -70,13 +70,16 @@ plugins:[
 # fechar o VS Code e abrir novamente.
 
 # configurar Settings do VS Code (engrenagem na parte inferior esquerda)
-# clicar no ícone para abrir o arquivo das configurações 
+# clicar no ícone para abrir o arquivo das configurações
 # acrescentar ao arquivo (se não existir):
-// ESLINT	
+// ESLINT
 "editor.codeActionsOnSave":{
 	"source.fixAll.eslint": true
 }
 
+# 203. Limpando o projeto
+# removendo diretórios e arquivos desnecessários no momento.
+# ativando o React Developer Tools extenção do google chrome
 
 
 
