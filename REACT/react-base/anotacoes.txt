@@ -108,14 +108,8 @@ npm i react-router-dom
 
 # agora vamos utilizar os "link to" do react-router-dom em vez de links "a href"
 
+# 208. Router e History
+# alterando BrowserRouter para  Router
 
-
-
-
-
-
-
-
-
-
-
+# instalando o History
+npm i history
