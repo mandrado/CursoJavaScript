@@ -102,6 +102,13 @@ npm i styled-components
 # instalando o pacote de icones
 npm i react-icons
 
+# 207. React Router DOM
+# Responsável do roteamento da aplicação
+npm i react-router-dom
+
+# agora vamos utilizar os "link to" do react-router-dom em vez de links "a href"
+
+
 
 
 
