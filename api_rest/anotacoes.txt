@@ -260,6 +260,9 @@ pm2 start /home/mandr/api/api_rest/dist/server.js --name=api
 # listar o que está rodando no servidor com pm2
 pm2 ls
 
+# salvar lista do que está rodando no servidor com pm2
+pm2 save
+
 # para testar se está rodando (se aparecer "index" está ok)
 curl http://localhost:3001
 
@@ -349,25 +352,51 @@ npm run build
 
 pm2 restart api
 
+# 201. Modificações na API Rest
+# instalar cors e helmet
+ npm i cors helmet
 
+# configurar cors para as regras de acesso a api
 
+# configurar para que além de retornar o token
+# retornar também o nome do usuário.
 
+# publicar as alterações no servidor de produção.
+git add .
+git commit -m 'Modificações na API Rest, cors, helmet e token'
+git push
 
+# LIGAR o servidor no Google Cloud Plataform
+gcloud compute instances start cursojs --zone=us-central1-a
 
+# Acessar o servidor na Google Cloud
+ssh -i ..\..\..\.ssh\cursojs seu.dominio.com
 
+cd api
+cd api_rest
 
+# baixar atualizações do api_rest
+git pull
 
+# instalar os novos pacotes
+npm i
 
+# criar o build dentro do servidor
+npm run build
 
+# realizar o teste:
+npm start
 
+## cancele o teste e vamos rodar com pm2
 
+# para rodar a aplicação com servidor de produção
+pm2 start /home/mandr/api/api_rest/dist/server.js --name=api
 
+# listar o que está rodando no servidor com pm2
+pm2 ls
 
+# reiniciar a api que está rodando com pm2
+pm2 restart api
 
-
-
-
-
-
-
-
+# DESLIGAR o servidor no Google Cloud Plataform
+gcloud compute instances stop cursojs --zone=us-central1-a

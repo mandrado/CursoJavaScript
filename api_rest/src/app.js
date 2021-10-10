@@ -15,11 +15,32 @@ dotenv.config();
 
 import express from 'express';
 import { resolve } from 'path';
+import helmet from 'helmet';
+import cors from 'cors';
 import homeRoute from './routes/homeRoute';
 import userRoute from './routes/userRoute';
 import tokenRoute from './routes/tokenRoute';
 import alunoRoute from './routes/alunoRoute';
 import imagensRoute from './routes/imagensRoute';
+
+const whiteList = [
+  'https://dev.mandrado.com',
+  'https://api.mandrado.com',
+  'http://localhost:3000',
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      // se o site que faz o acesso estiver dentro da whiteList
+      // ou se a origin não existir, vamos permitir o acesso ??
+      callback(null, true);
+    } else {
+      // se não existir vamos exibir um erro
+      callback(new Error('acesso não permitido por CORS'));
+    }
+  },
+};
 
 // importar as configurações do banco de dados
 import './database';
@@ -32,6 +53,8 @@ class App {
   }
 
   middlewares() {
+    this.app.use(cors(corsOptions));
+    this.app.use(helmet());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use('/imagens/', express.static(resolve(__dirname, '..', 'uploads', 'imagens')));
