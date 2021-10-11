@@ -113,3 +113,18 @@ npm i react-router-dom
 
 # instalando o History
 npm i history
+
+# 210. MyRoute - Rota personalizada e privada
+# rotas privadas com checagem para login
+# instalar o prop-types para realizar as validações dos componentes
+npm i prop-types
+# Solucionando (ou não) Error: Maximum update depth exceeded.
+# Ao pesquisar no Google eu encontrei:
+# https://stackoverflow.com/questions/61010184/how-to-fix-error-maximum-update-depth-exceeded?rq=1
+# Então eu conclui que remover o 'exact' poderia resolver, e resolveu.
+# Deixei a pergunta:
+# "Professor é isso mesmo? retirar esse 'exact' vai me causar problemas lá na frente?"
+
+
+
+
