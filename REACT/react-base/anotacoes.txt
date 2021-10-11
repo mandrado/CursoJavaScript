@@ -125,6 +125,19 @@ npm i prop-types
 # Deixei a pergunta:
 # "Professor é isso mesmo? retirar esse 'exact' vai me causar problemas lá na frente?"
 
+# 211. React Toastify
+
+# O que é React Toastify?
+# React Toastify é um pacote leve baseado na biblioteca react
+# que ajuda a adicionar notificações personalizadas lindamente
+# elaboradas para reagir ao projeto.
+
+npm install --save react-toastify
+
+# configurar para 3 segundos:
+# <ToastContainer autoClose={3000} />
+
+# importar o css do Toastify Container
 
 
 
