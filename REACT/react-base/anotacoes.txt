@@ -147,8 +147,25 @@ npm i axios
 # criar configuração para apontar pa a url da api_rest
 # baseURL: 'https://api.mandrado.com',
 
-# ligar nosso servidor na Google Cloud para testar
+# LIGAR nosso servidor na Google Cloud para testar
 gcloud compute instances start cursojs --zone=us-central1-a
 
 # teste axios ok
+
+# 213. Redux + React
+# Redux cria um estado global para toda a aplicação
+# --> Estado inicial: {
+#     usuario_logado: false
+# }
+# --> ação --> reducer --> newState = estadoAtual --> newState
+
+# instalar redux e react-redux
+npm i redux react-redux
+
+# criar a pasta store (tudo que for do redux, guarde aqui.)
+# criar o arquivo index.js
+
+# DESLIGAR nosso servidor na Google Cloud
+gcloud compute instances stop cursojs --zone=us-central1-a
+
 
