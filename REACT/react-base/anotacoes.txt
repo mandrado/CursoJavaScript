@@ -139,5 +139,16 @@ npm install --save react-toastify
 
 # importar o css do Toastify Container
 
+# 212. Configurando o Axios
+# utilizado para fazer requisições para nossa api_rest
+npm i axios
 
+# criar o arquivo chamado axios.js dentro da pasta services.
+# criar configuração para apontar pa a url da api_rest
+# baseURL: 'https://api.mandrado.com',
+
+# ligar nosso servidor na Google Cloud para testar
+gcloud compute instances start cursojs --zone=us-central1-a
+
+# teste axios ok
 
