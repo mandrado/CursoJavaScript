@@ -6,7 +6,7 @@ import { Nav } from './styled';
 
 export default function Header() {
   // eslint-disable-next-line no-unused-vars
-  const botaoClidado = useSelector((state) => state.botaoClidado);
+  const botaoClidado = useSelector((state) => state.exemplo.botaoClidado);
   return (
     <Nav>
       <Link to="/">

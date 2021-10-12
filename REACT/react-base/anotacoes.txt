@@ -168,4 +168,4 @@ npm i redux react-redux
 # DESLIGAR nosso servidor na Google Cloud
 gcloud compute instances stop cursojs --zone=us-central1-a
 
-
+# 214. Separando Actions e Reducers

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Container } from '../../styles/GlobalStyles';
 import { Paragrafo, Small, Title } from './styled';
+import * as exemploActions from '../../store/modules/exemplo/actions';
 
 export default function Login() {
   // variavel do disparador de ações
@@ -9,9 +10,7 @@ export default function Login() {
 
   function handleClick(e) {
     e.preventDefault();
-    dispatch({
-      type: 'BOTAO_CLICADO',
-    });
+    dispatch(exemploActions.clickBotao());
   }
   return (
     <Container>
