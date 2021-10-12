@@ -27,4 +27,6 @@ Estar a aplicação base
 
 `npm start`
 
-## Limpando a página de login
+Limpando a página de login.
+
+criando as páginas principais.
