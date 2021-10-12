@@ -16,3 +16,15 @@ Comando no Windows:
 Entrar no novo diretório
 
 `cd consumirapi`
+
+# 218. Páginas e rotas da aplicação
+
+Instalar os pacotes básicos
+
+`npm i`
+
+Estar a aplicação base
+
+`npm start`
+
+## Limpando a página de login
