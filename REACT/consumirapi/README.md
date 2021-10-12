@@ -30,3 +30,18 @@ Estar a aplicação base
 Limpando a página de login.
 
 criando as páginas principais.
+
+# 219. Buscando alunos da API
+
+## LIGAR nosso servidor na Google Cloud para testar
+`gcloud compute instances start cursojs --zone=us-central1-a`
+
+Configurar o axios para o endereço de sua api.
+
+Configurar a tela para exibir os alunos.
+
+## Se uma chave não existir poderá haver um erro na aplicação
+Para não ocorrer o erro, vamos usar a biblioteca lodash
+
+`npm i lodash`
+
