@@ -5,11 +5,10 @@ import * as types from '../types';
 
 const requisicao = () =>
   // eslint-disable-next-line no-unused-vars
-  new Promise((resolve, reject) => {
+  new Promise((resolve) => {
     setTimeout(() => {
-      // resolve();
-      reject();
-    }, 2000);
+      resolve();
+    }, 600);
   });
 
 function* exemploRequest() {
