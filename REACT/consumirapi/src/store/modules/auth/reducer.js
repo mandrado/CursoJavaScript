@@ -10,17 +10,18 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case types.LOGIN_SUCCESS: {
-      console.log('Ocorreu tudo bem =)');
+      console.log('REDUCER', action.payload);
       const newState = { ...state };
-      // se botão clicado for verdadeiro
-      // ele se torna falso, se for falso
-      // ele se torna verdadeiro
-      // newState.botaoClidado = !newState.botaoClidado;
+      newState.isLoading = true;
+      newState.token = action.payload.token;
+      newState.user = action.payload.user;
+
       return newState;
     }
     case types.LOGIN_FAILURE: {
-      console.log('Ocorreu um erro =(');
-      return state;
+      console.log('REDUCER', action.payload);
+      const newState = { ...initialState };
+      return newState;
     }
     case types.LOGIN_REQUEST: {
       console.log('REDUCER', action.payload);

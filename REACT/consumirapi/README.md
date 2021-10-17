@@ -55,4 +55,6 @@ instalar o pacote de validação de e-mail:
 criando o formulário de login
 configurando Reducer e Saga para o login
 
-
+# 222. Login 2
+logar e persistir Authorization
+devolver o usuário para a página que chamou o login (prevPath)
