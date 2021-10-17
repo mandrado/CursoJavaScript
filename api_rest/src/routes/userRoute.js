@@ -10,7 +10,7 @@ router.get('/', loginRequired, userController.index); // Lista todos os usuário
 router.get('/:id', loginRequired, userController.show); // Lista usuário
 
 // precisamos de uma página para criar usuários com acesso a usuários não logados:
-router.post('/', loginRequired, userController.store);
+router.post('/', userController.store);
 // precisamos de uma páigna para atualisar seus dados, jamais de outros
 // usuários, com login requerido
 router.put('/', loginRequired, userController.update);
