@@ -27,6 +27,9 @@ button {
   border-radius: 5px;
   font-weight: 700;
 }
+button:hover {
+  filter: brightness(90%);
+}
 
 a {
   text-decoration: none;

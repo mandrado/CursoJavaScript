@@ -45,3 +45,10 @@ Para não ocorrer o erro, vamos usar a biblioteca lodash
 
 `npm i lodash`
 
+# 220. Cadastrando novos usuários na aplicação
+Criando formulário de cadastro do usuário e validando os dados.
+instalar o pacote de validação de e-mail:
+
+`npm i validator`
+
+
