@@ -53,5 +53,6 @@ instalar o pacote de validação de e-mail:
 
 # 221. Login 1
 criando o formulário de login
+configurando Reducer e Saga para o login
 
 
