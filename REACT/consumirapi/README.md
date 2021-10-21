@@ -58,3 +58,20 @@ configurando Reducer e Saga para o login
 # 222. Login 2
 logar e persistir Authorization
 devolver o usuário para a página que chamou o login (prevPath)
+
+# 223. Componente Loading
+
+`npm i express-delay`
+
+No arquivo app.js incluimos um delay de 2 segundos:
+
+```
+import delay from 'express-delay';
+
+middlewares(){
+  ...
+  this.app.use(delay(2000))
+  ...
+}
+```
+Criar uma pasta chamada Loading dentro de componentes

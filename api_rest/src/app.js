@@ -17,6 +17,7 @@ import express from 'express';
 import { resolve } from 'path';
 import helmet from 'helmet';
 import cors from 'cors';
+import delay from 'express-delay';
 import homeRoute from './routes/homeRoute';
 import userRoute from './routes/userRoute';
 import tokenRoute from './routes/tokenRoute';
@@ -55,6 +56,8 @@ class App {
   middlewares() {
     this.app.use(cors(corsOptions));
     this.app.use(helmet());
+    // incluimos um delay de 2 segundos:
+    this.app.use(delay(2000));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use('/imagens/', express.static(resolve(__dirname, '..', 'uploads', 'imagens')));

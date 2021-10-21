@@ -2,6 +2,7 @@ import { get } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { FaEdit, FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 import { Container } from '../../styles/GlobalStyles';
 import { AlunoContainer, ProfilePicture } from './styled';
@@ -18,6 +19,7 @@ export default function Alunos() {
   }, []);
   return (
     <Container>
+      <Loading isLoading />
       <h1>Alunos</h1>
       <AlunoContainer>
         {alunos.map((aluno) => (

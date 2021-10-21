@@ -438,3 +438,20 @@ cancele o teste e vamos rodar com pm2
 # 220. Cadastrando novos usuários na aplicação
 Liberado rota de registro de novo usuário
 convertendo arquivo de anotações em readme.md
+
+# 223. Componente Loading
+na api instalamos e configuramos um delay:
+
+`npm i express-delay`
+
+No arquivo app.js incluimos um delay de 2 segundos:
+
+```
+import delay from 'express-delay';
+
+middlewares(){
+  ...
+  this.app.use(delay(2000))
+  ...
+}
+```
