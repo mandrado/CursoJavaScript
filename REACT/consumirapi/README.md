@@ -61,17 +61,13 @@ devolver o usuário para a página que chamou o login (prevPath)
 
 # 223. Componente Loading
 
-`npm i express-delay`
+na api instalamos e configuramos um delay:
 
-No arquivo app.js incluimos um delay de 2 segundos:
+https://github.com/mandrado/CursoJavaScript/commit/93bb4ae6cf6b9eedfd880d960ab33978784d383b
 
-```
-import delay from 'express-delay';
-
-middlewares(){
-  ...
-  this.app.use(delay(2000))
-  ...
-}
-```
 Criar uma pasta chamada Loading dentro de componentes
+Configurar o isLoading nos arquivos:
+1. Alunos,
+1. login,
+1. Register, e
+1. src\store\modules\auth

@@ -10,22 +10,27 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case types.LOGIN_SUCCESS: {
-      console.log('REDUCER', action.payload);
+      //  console.log('REDUCER', action.payload);
       const newState = { ...state };
       newState.isLoading = true;
       newState.token = action.payload.token;
       newState.user = action.payload.user;
+      newState.isLoading = false;
 
       return newState;
     }
     case types.LOGIN_FAILURE: {
-      console.log('REDUCER', action.payload);
+      //  console.log('REDUCER', action.payload);
       const newState = { ...initialState };
+
       return newState;
     }
     case types.LOGIN_REQUEST: {
-      console.log('REDUCER', action.payload);
-      return state;
+      const newState = { ...state };
+      newState.isLoading = true;
+      // console.log('REDUCER', action.payload);
+
+      return newState;
     }
 
     default:
