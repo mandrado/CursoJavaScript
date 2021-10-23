@@ -71,3 +71,6 @@ Configurar o isLoading nos arquivos:
 1. login,
 1. Register, e
 1. src\store\modules\auth
+
+# 224. Edição dos dados do usuário logado #1
+Editando os dados dos usuários parte 1

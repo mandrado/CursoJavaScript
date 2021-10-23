@@ -28,7 +28,14 @@ function persistRehydrate({ payload }) {
   axios.defaults.headers.Authorization = `Beare ${token}`;
 }
 
+function registerRequest({ payload }) {
+  // eslint-disable-next-line no-unused-vars
+  const { id, nome, email, password } = payload;
+  console.log('to be continued ...');
+}
+
 export default all([
   takeLatest(types.LOGIN_REQUEST, loginRequest),
+  takeLatest(types.REGISTER_REQUEST, registerRequest),
   takeLatest(types.PERSIST_REHYDRATE, persistRehydrate),
 ]);
