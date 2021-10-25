@@ -74,3 +74,6 @@ Configurar o isLoading nos arquivos:
 
 # 224. Edição dos dados do usuário logado #1
 Editando os dados dos usuários parte 1
+1. movendo a edição para o arquivo sagas.js
+
+# 225. Edição dos dados do usuário logado #2

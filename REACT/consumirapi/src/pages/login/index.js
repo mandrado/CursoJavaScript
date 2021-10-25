@@ -31,7 +31,7 @@ export default function Login(props) {
     }
     if (formError) return;
 
-    console.log(email);
+    // console.log(email);
     dispatch(actions.loginRequest({ email, password, prevPath }));
   };
 

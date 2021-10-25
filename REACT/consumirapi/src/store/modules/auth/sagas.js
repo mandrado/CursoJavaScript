@@ -19,7 +19,7 @@ function* loginRequest({ payload }) {
     history.push(payload.prevPath);
   } catch (e) {
     toast.error('Usuário ou senha inválidos.');
-    yield put(actions, actions.loginFailure());
+    yield put(actions.loginFailure());
   }
 }
 function persistRehydrate({ payload }) {
@@ -28,10 +28,48 @@ function persistRehydrate({ payload }) {
   axios.defaults.headers.Authorization = `Beare ${token}`;
 }
 
-function registerRequest({ payload }) {
+// eslint-disable-next-line consistent-return
+function* registerRequest({ payload }) {
   // eslint-disable-next-line no-unused-vars
   const { id, nome, email, password } = payload;
-  console.log('to be continued ...');
+
+  try {
+    if (id) {
+      // se existe id fazer atualização
+      yield call(axios.put, '/users', {
+        email,
+        nome,
+        password: password || undefined,
+      });
+      toast.success('Conta alterada com sucesso!');
+      yield put(actions.registerUpdatedSuccess({ nome, email, password }));
+    } else {
+      // se não existe id fazer a criação do usuário
+      yield call(axios.post, '/users', {
+        email,
+        nome,
+        password,
+      });
+      toast.success('Conta criada com sucesso!');
+      yield put(actions.registerCreatedSuccess({ nome, email, password }));
+      history.push('/login');
+    }
+  } catch (e) {
+    const errors = get(e, 'response.data.error', []);
+    // eslint-disable-next-line no-unused-vars
+    const status = get(e, 'response.status', 0);
+    if (status === 401) {
+      toast.error('Voce precisa fer login novamente!');
+      return history.push('/login');
+    }
+    // se usuário não estiver logado
+    if (errors.length > 0) {
+      errors.map((error) => toast.error(error));
+    } else {
+      toast.error('Erro desconhecido.');
+    }
+    yield put(actions.registerFailure());
+  }
 }
 
 export default all([
