@@ -29,6 +29,7 @@ export default function (state = initialState, action) {
     case types.LOGIN_REQUEST: {
       const newState = { ...state };
       newState.isLoading = true;
+      newState.IsLoggedIn = true;
       // console.log('REDUCER', action.payload);
 
       return newState;
