@@ -14,15 +14,16 @@ import * as actions from '../../store/modules/auth/actions';
 export default function Register() {
   const dispatch = useDispatch();
 
-  const id = useSelector((state) => state.auth.user);
+  const id = useSelector((state) => state.auth.user.id);
   const nomeStored = useSelector((state) => state.auth.user.nome);
   const emailStored = useSelector((state) => state.auth.user.email);
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   // eslint-disable-next-line no-unused-vars
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   React.useEffect(() => {
     if (!id) return;
