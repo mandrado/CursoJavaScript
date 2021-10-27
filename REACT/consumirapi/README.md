@@ -92,3 +92,35 @@ Configurando o logout do usuário
 ## DESLIGAR nosso servidor na Google Cloud para testar
 `gcloud compute instances stop cursojs --zone=us-central1-a`
 
+# 228. Corrigindo o LOGIN_FAILURE
+
+Em nosso arquivo reducer.js (dentro de src/store/modules/auth/reducer.js) existe o seguinte case:
+
+```
+case types.LOGIN_FAILURE: {
+  const newState = { ...initialState };
+  return newState;
+}
+```
+
+Como estamos utilizando este case para "deslogar" os usuários, é necessário excluir a chave "Authorization" que adicionamos ao logar o usuário dos "defaults" do axios.
+
+Para fazer isso é bastante simples:
+
+Primeiro importe o axios;
+
+`import axios from '../../../services/axios';`
+
+Agora altere o case para apagar a chave "Authorization" de dentro de axios.defaults.headers. Assim:
+
+`delete axios.defaults.headers.Authorization;`
+
+O case completo agora ficou assim:
+```
+case types.LOGIN_FAILURE: {
+  delete axios.defaults.headers.Authorization;
+  const newState = { ...initialState };
+  return newState;
+}
+```
+Isso garante que usuários que façam login e depois logout, não permaneçam com token ativo após o logout.
