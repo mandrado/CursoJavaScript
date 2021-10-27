@@ -80,3 +80,15 @@ Editando os dados dos usuários parte 1
 
 # 226. Logout
 Configurando o logout do usuário
+
+# 227. Excluindo alunos
+## LIGAR nosso servidor na Google Cloud para testar
+`gcloud compute instances start cursojs --zone=us-central1-a`
+
+## Iniciar a aplicação
+
+`npm start`
+
+## DESLIGAR nosso servidor na Google Cloud para testar
+`gcloud compute instances stop cursojs --zone=us-central1-a`
+
