@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 import { Container } from '../../styles/GlobalStyles';
-import { AlunoContainer, ProfilePicture } from './styled';
+import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
 
 export default function Alunos() {
   const [alunos, setAlunos] = useState([]);
@@ -69,6 +69,8 @@ export default function Alunos() {
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Alunos</h1>
+      <NovoAluno to="/aluno/">Novo Aluno </NovoAluno>
+
       <AlunoContainer>
         {alunos.map((aluno, index) => (
           <div key={String(aluno.id)}>

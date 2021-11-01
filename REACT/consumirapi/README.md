@@ -124,3 +124,18 @@ case types.LOGIN_FAILURE: {
 }
 ```
 Isso garante que usuários que façam login e depois logout, não permaneçam com token ativo após o logout.
+# 229. Cadastro de alunos #1
+# 230. Cadastro de alunos #2
+# 231. Cadastro de alunos #3
+
+
+## LIGAR nosso servidor na Google Cloud para testar
+`gcloud compute instances start cursojs --zone=us-central1-a`
+
+## Iniciar a aplicação
+`npm start`
+
+
+## DESLIGAR nosso servidor na Google Cloud para testar
+`gcloud compute instances stop cursojs --zone=us-central1-a`
+
