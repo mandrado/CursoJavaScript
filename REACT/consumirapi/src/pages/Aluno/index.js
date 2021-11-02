@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import { isEmail, IsInt, isFloat } from 'validator';
+import { isEmail, isInt, isFloat } from 'validator';
 import { useDispatch } from 'react-redux';
+import { FaEdit, FaUserCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { Container } from '../../styles/GlobalStyles';
-import { Form } from './styled';
+import { Form, ProfilePicture, Title } from './styled';
 import Loading from '../../components/Loading';
 import axios from '../../services/axios';
 import history from '../../services/history';
@@ -14,7 +16,7 @@ import * as actions from '../../store/modules/auth/actions';
 // eslint-disable-next-line react/prop-types
 export default function Aluno({ match }) {
   const dispatch = useDispatch();
-  const id = get(match, 'params.id', 0);
+  const id = get(match, 'params.id', '');
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
   const [email, setEmail] = useState('');
@@ -22,6 +24,7 @@ export default function Aluno({ match }) {
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [imagem, setImagem] = useState('');
 
   useEffect(() => {
     if (!id) return;
@@ -31,7 +34,7 @@ export default function Aluno({ match }) {
         setIsLoading(true);
         const { data } = await axios.get(`/alunos/${id}`);
         // eslint-disable-next-line no-unused-vars
-        const Imagem = get(data, 'Imagems[0]', '');
+        const Imagem = get(data, 'Imagems[0].url', '');
 
         setNome(data.nome);
         setSobrenome(data.sobrenome);
@@ -39,6 +42,7 @@ export default function Aluno({ match }) {
         setIdade(data.idade);
         setPeso(data.peso);
         setAltura(data.altura);
+        setImagem(Imagem);
 
         setIsLoading(false);
         // eslint-disable-next-line no-empty
@@ -74,7 +78,7 @@ export default function Aluno({ match }) {
       formErrors = true;
     }
 
-    if (!IsInt(String(idade))) {
+    if (!isInt(String(idade))) {
       toast.error('Idade inválida');
       formErrors = true;
     }
@@ -86,7 +90,6 @@ export default function Aluno({ match }) {
 
     if (!isFloat(String(altura))) {
       toast.error('Altura inválida');
-      // eslint-disable-next-line no-unused-vars
       formErrors = true;
     }
 
@@ -108,7 +111,7 @@ export default function Aluno({ match }) {
         toast.success('Aluno(a) editado(a) com sucesso!');
       } else {
         // criando aluno
-        await axios.post(`/alunos/`, {
+        const { data } = await axios.post(`/alunos/`, {
           nome,
           sobrenome,
           email,
@@ -117,6 +120,7 @@ export default function Aluno({ match }) {
           altura,
         });
         toast.success('Aluno(a) criado(a) com sucesso!');
+        history.push(`/aluno/${data.id}/edit`);
       }
       setIsLoading(false);
     } catch (err) {
@@ -135,7 +139,20 @@ export default function Aluno({ match }) {
   return (
     <Container>
       <Loading isLoading={isLoading} />
-      <h1>{id ? 'Editar aluno' : 'Novo Aluno'}</h1>
+      <Title>{id ? 'Editar aluno' : 'Novo Aluno'}</Title>
+      {id && (
+        <ProfilePicture>
+          {imagem ? (
+            <img src={imagem} alt={nome} />
+          ) : (
+            <FaUserCircle size={120} />
+          )}
+          <Link to={`/imagens/${id}`}>
+            <FaEdit size={24} />
+          </Link>
+        </ProfilePicture>
+      )}
+
       <Form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -162,13 +179,13 @@ export default function Aluno({ match }) {
           placeholder="Idade"
         />
         <input
-          type="number"
+          type="text"
           value={peso}
           onChange={(e) => setPeso(e.target.value)}
           placeholder="Peso"
         />
         <input
-          type="number"
+          type="text"
           value={altura}
           onChange={(e) => setAltura(e.target.value)}
           placeholder="Altura"

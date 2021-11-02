@@ -29,10 +29,10 @@ export default function (state = initialState, action) {
       return newState;
     }
     case types.LOGIN_REQUEST: {
+      // console.log('REDUCER', action.payload);
       const newState = { ...state };
       newState.isLoading = true;
       newState.IsLoggedIn = true;
-      // console.log('REDUCER', action.payload);
 
       return newState;
     }

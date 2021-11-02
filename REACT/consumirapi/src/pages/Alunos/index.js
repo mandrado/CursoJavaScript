@@ -55,20 +55,24 @@ export default function Alunos() {
     } catch (err) {
       // const errors = get(err, 'response.data.errors', []);
       // errors.map((error) => toast.error(error));
-      setIsLoading(false);
       const status = get(err, 'response.status', 0);
+
       if (status === 401) {
         toast.error('Voce precisa fazer login');
       } else {
         toast.error('Ocorreu um erro ao excluir aluno');
       }
+
+      setIsLoading(false);
     }
   };
 
   return (
     <Container>
       <Loading isLoading={isLoading} />
+
       <h1>Alunos</h1>
+
       <NovoAluno to="/aluno/">Novo Aluno </NovoAluno>
 
       <AlunoContainer>
