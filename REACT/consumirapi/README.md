@@ -128,6 +128,7 @@ Isso garante que usuários que façam login e depois logout, não permaneçam co
 # 230. Cadastro de alunos #2
 # 231. Cadastro de alunos #3
 # 232. Exibindo a foto do aluno
+# 233. Editando a foto do aluno
 
 
 ## LIGAR nosso servidor na Google Cloud para testar
