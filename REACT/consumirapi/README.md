@@ -208,11 +208,30 @@ Enviar a pasta para o servidor git
 
  `pwd`
 
+ `sudo nano /etc/nginx/site-enable/react2.otaviomiranda.com.br`
+
 ### instruções que eu utilizei no servidor na pasta cd "react/app"
 
 `ln -s ../../api/REACT/consumirapi/ consumirapi`
 
 `cd consumirapi`
+
+`git pull`
+
+`npm i`
+
+Recebi o erro:
+
+```
+npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+```
+Resolvi instalando a versão mais recente do NPM no servidor
+
+`sudo npm install -g npm@latest`
+
+Retomando a execução dos comandos:
+
+`npm i`
 
 `npm run build`
 
@@ -220,6 +239,33 @@ Enviar a pasta para o servidor git
 
  `pwd`
 
+`cd /etc/nginx/sites-available/`
+
+`sudo cp dev.mandrado.com consumirapi.com`
+
+`sudo vim consumirapi.http`
+
+Desabilitar o site do projeto agenda
+
+`cd ../sites-enabled/`
+
+Listar os arquivos e ver seus links:
+`ls -la`
+
+```
+api.mandrado.com -> /etc/nginx/sites-available/api.mandrado.com
+dev.mandrado.com -> /etc/nginx/sites-available/dev.mandrado.com
+```
+
+Remover o link simbólico para recriar com o novo apontamento.
+`sudo unlink dev.mandrado.com`
+
+Criar o link para o novo app:
+
+`sudo ln -s /etc/nginx/sites-available/consumirapi.com dev.mandrado.com `
+
+Reiniciar o serviço nginx
+`sudo service nginx restart`
 
 
 
