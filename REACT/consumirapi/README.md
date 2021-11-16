@@ -141,3 +141,97 @@ Isso garante que usuários que façam login e depois logout, não permaneçam co
 ## DESLIGAR nosso servidor na Google Cloud para testar
 `gcloud compute instances stop cursojs --zone=us-central1-a`
 
+# 234. Deploy do React com NGINX
+
+## LIGAR o servidor no Google Cloud Plataform
+`gcloud compute instances start cursojs --zone=us-central1-a`
+
+## Acessar o servidor na Google Cloud
+`ssh -i ..\..\..\..\.ssh\cursojs seu.dominio.com`
+
+### instruções da aula para o servidor
+`mkdir react`
+
+`cd react`
+
+`mkdir app && mkdir repo`
+
+`cd repo`
+
+`git init --bare`
+
+`cd ../app`
+
+`git config --global user.name 'Mandrado'`
+
+`gitconfig --global user.email 'mandrado@gmail.com'`
+
+`git remote add origin /home/mandr/react/repo`
+
+### instruções da aula para o desktop
+
+Copiar a pasta do projeto (linux)
+`rsync -havi --progress --exclude node_modules --exclude .git /media/mandr/cursojs/REACT/consumirapi/ consumirapi`
+
+
+Na nova pasta do projeto incluir as chaves "homepage" no arquivo package.json
+
+Enviar a pasta para o servidor git
+`cd consumirapi`
+
+`git init`
+
+`git config user.name 'Mandrado Santos'`
+
+`git config user.email 'mandrado@gmail.com'`
+
+`git remote add origin `
+
+`git remote add origin api.mandrado.com:~/react/repo`
+
+`git add .`
+
+`git commit -am 'Inicial'`
+
+`git push origin master -u`
+
+
+### instruções da aula para o servidor na pasta cd "react/app"
+
+`git pull origin master`
+
+`npm i`
+
+`npm run build`
+
+`cd build`
+
+ `pwd`
+
+### instruções que eu utilizei no servidor na pasta cd "react/app"
+
+`ln -s ../../api/REACT/consumirapi/ consumirapi`
+
+`cd consumirapi`
+
+`npm run build`
+
+`cd build`
+
+ `pwd`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
