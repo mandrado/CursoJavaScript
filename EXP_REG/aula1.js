@@ -5,7 +5,7 @@
  * Flag da expressão regular
  *  g - global (encontrar todas as ocorrências)
  *  i - insensitive (case insentitive)
- *  () - separa por grupos de pesquisa
+ *  () - separa por grupos de pesquisa (()())
  *  | - (pipe) ou
  */
 
