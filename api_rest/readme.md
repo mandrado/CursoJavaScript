@@ -223,7 +223,7 @@ Certifique-se se o servidor está rodando.
 Criar a build do projeto para enviar ele para a produção.
 Editar o arquivo package.json e incluir o scripts
 
-```
+```sh
   "build": "sucrase ./src -d ./dist --transforms imports"
     "start": "node dist/server.js",
 ```
@@ -241,7 +241,7 @@ Editar o arquivo package.json e incluir o scripts
 `ssh -i ..\..\..\.ssh\cursojs seu.dominio.com`
 
 ## Criar o diretório api`
-```
+```sh
 mkdir api
 cd api
 ```
@@ -315,7 +315,7 @@ para rodar a aplicação com servidor de produção
 `sudo certbot certonly --standalone -d api.mandrado.com`
 
 ### recebi o erro:
-```
+```sh
 Failed authorization procedure. api.mandrado.com (http-01): urn:ietf:params:acme:error:dns :: DNS problem:
 SERVFAIL looking up A for api.mandrado.com - the domain's nameservers may be malfunctioning
 ```
@@ -324,7 +324,7 @@ Remover as configurações de "DNS Settings" que apontavam para o google (ns-clo
 configurações padrão
 crie o redirecionamento para o novo subdominio adicionando
 
-```
+```sh
 A (Adress) --> ip do Google cloud
 CNAME (Alias) --> do Google cloud
 ```
@@ -348,7 +348,7 @@ https://www.youtube.com/watch?v=eXtqqofrhOo
 `sudo vim /etc/nginx/nginx.conf`
 
 ## crescentar dentro de
-```
+```sh
 http {
 
   client_max_body_size 10M;
@@ -369,7 +369,7 @@ http {
 sua pasta de distribuição não sobe junto com seu git commit.
 então terá que fazer build no servidor novamente.
 
-```
+```sh
 git add
 git commit -m "188. Deploy da API corrigindo o endereço de upload"
 git push
@@ -394,7 +394,7 @@ configurar para que além de retornar o token
 retornar também o nome do usuário.
 
 ## publicar as alterações no servidor de produção.
-```
+```sh
 git add .
 git commit -m 'Modificações na API Rest, cors, helmet e token'
 git push
@@ -446,7 +446,7 @@ na api instalamos e configuramos um delay:
 
 No arquivo app.js incluimos um delay de 2 segundos:
 
-```
+```sh
 import delay from 'express-delay';
 
 middlewares(){

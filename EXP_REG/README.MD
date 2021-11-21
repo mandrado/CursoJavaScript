@@ -4,6 +4,7 @@
 # 239. Quantificadores
 # 240. Greedy e non-greedy (lazy)
 # 241. Conjuntos e Ranges
+# 242. Exercícios com CPFs e IPs (com solução)
 
 # links
  [expressões regulares - mozilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)

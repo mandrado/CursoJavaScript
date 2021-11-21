@@ -96,7 +96,7 @@ Configurando o logout do usuário
 
 Em nosso arquivo reducer.js (dentro de src/store/modules/auth/reducer.js) existe o seguinte case:
 
-```
+```sh
 case types.LOGIN_FAILURE: {
   const newState = { ...initialState };
   return newState;
@@ -116,7 +116,7 @@ Agora altere o case para apagar a chave "Authorization" de dentro de axios.defau
 `delete axios.defaults.headers.Authorization;`
 
 O case completo agora ficou assim:
-```
+```sh
 case types.LOGIN_FAILURE: {
   delete axios.defaults.headers.Authorization;
   const newState = { ...initialState };
@@ -222,7 +222,7 @@ Enviar a pasta para o servidor git
 
 Recebi o erro:
 
-```
+```sh
 npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
 ```
 Resolvi instalando a versão mais recente do NPM no servidor
@@ -252,7 +252,7 @@ Desabilitar o site do projeto agenda
 Listar os arquivos e ver seus links:
 `ls -la`
 
-```
+```sh
 api.mandrado.com -> /etc/nginx/sites-available/api.mandrado.com
 dev.mandrado.com -> /etc/nginx/sites-available/dev.mandrado.com
 ```
