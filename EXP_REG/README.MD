@@ -3,3 +3,8 @@
 # 238. String Match e Replace
 # 239. Quantificadores
 # 240. Greedy e non-greedy (lazy)
+# 241. Conjuntos e Ranges
+
+# links
+ [expressões regulares - mozilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+  [caracteres unicode - wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
