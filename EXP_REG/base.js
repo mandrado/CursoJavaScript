@@ -23,6 +23,13 @@ const arquivos = [
 //            <*>    *    </*><*>      *    </*>
 //            <.+>.+ <\/.+>
 const html = '<p>Olá mundo</p><p>Olá de novo</p> <div>Sou a div</div>';
+const html2 = `<p 
+data-teste='teste' 
+class ="teste teste">
+  Olá mundo
+  </p><p>Olá de novo</p>
+   <div>Sou a div</div>`;
+
 
 const cpfs = `
 Os CPFs são:
@@ -60,5 +67,6 @@ module.exports = {
     alfabeto,
     cpfs,
     cpfs2,
-    ips
+    ips,
+    html2
 }
