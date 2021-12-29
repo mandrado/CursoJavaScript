@@ -7,6 +7,7 @@
 # 242. Exercícios com CPFs e IPs (com solução)
 # 243. Começa com e Termina com
 # 244. Retrovisores com Match e Replace
+# 245. Lookahead e Lookbehind (Lookaround)
 
 # links
  [expressões regulares - mozilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
