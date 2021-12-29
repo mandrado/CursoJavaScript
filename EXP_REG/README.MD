@@ -8,7 +8,10 @@
 # 243. Começa com e Termina com
 # 244. Retrovisores com Match e Replace
 # 245. Lookahead e Lookbehind (Lookaround)
+# 246. Notas finais e receitas
 
 # links
  [expressões regulares - mozilla](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-  [caracteres unicode - wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+ [caracteres unicode - wikipedia](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+ [Regular expression tester](https://regex101.com/)
+ [https://emailregex.com/](https://emailregex.com/)
